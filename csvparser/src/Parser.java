@@ -16,7 +16,7 @@ public class Parser {
         }catch(Exception e){
             System.out.println(e.getMessage());
         }
-        
+
     }
 
 
@@ -34,8 +34,21 @@ public class Parser {
         return result;
     }
 
+   /* static String cleanData(String data){
+        Pattern p = Pattern.compile("[^<\\s]");
+        Matcher m = p.matcher(data);
+        StringBuffer result = new StringBuffer();
+        while(m.find()){
+            m.appendReplacement(result, m.group() + "");
+        }
+        m.appendTail(result);
+        return result.toString();
+    } */
+
     static String cleanData(String data){
-        return data.replaceAll(" ", "");
+        //return data.replaceAll("[^a-zA-Z0-9\\s]","");
+        return data.replaceAll("((?s)(<|\\[).*?(>|\\]))|\\(|\\)","");
+
     }
 
     static void writeFile(String data) throws IOException{
@@ -48,7 +61,5 @@ public class Parser {
         fileOut.close();
         System.out.println("done");
     }
-
-
 
 }

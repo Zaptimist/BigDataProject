@@ -1,47 +1,47 @@
-Arballo,Shawn		DeuceofSpades(2011)[Buddy]<38>
+Arballo, Shawn		Deuce of Spades 2011    
 
-Arban			Leclochardmilliardaire(1951)
+Arban			Le clochard milliardaire 1951
 
-Arban,Frank		IndianaJonesandtheRelicofGotham(2008)[Student]<19>
+Arban, Frank		Indiana Jones and the Relic of Gotham 2008    
 
-Arbana,Dritan		Bloodlands(2016)[Florian]
-			KickstartMyGandhi(2009)(V)
-			"EastWest101"(2007){AProdigalFear(#2.2)}[Scherbakov]
-			"TheCut"(2009/I){PursedLips(#1.4)}[HeadButtingSoccerPlayer]<14>
+Arbana, Dritan		Bloodlands 2016  
+			Kickstart My Gandhi 2009 V
+			"East West 101" 2007 {A Prodigal Fear #2.2}  
+			"The Cut" 2009/I {Pursed Lips #1.4}    
 
-Arbana,Reshat		Ada(2013)[Nika]
-			BaladaeKurbinit(1990)
-			Binarët(1987)
-			Doraengrohtë(1983)[Ahmeti]<3>
-			DueliHeshtur(1967)[Islami]<3>
-			Fijetqëpriten(1976)[Semi]<4>
-			Fluturanëkabinentime(1988)
-			Fundiinjëgjakmarrjeje(1983)[Jashari]<4>
-			Gjallë(2009)[Godfather]<9>
-			Gjeneralgramafoni(1978)[Prefekti]<5>
-			Gjurma(1970)[Iarratisuri]<10>
-			Gjurmënëkaltërsi(1981)[KomandantMarkoja]<1>
-			Gracka(1984)[Gjeneraliamerikan]<4>
-			Hijeqëmbetenpas(1985)
-			Itreti(1978)(TV)[KryetariiDegë]<5>
-			Intendenti(1981)[Kryetariikëshillit]<3>
-			Kapedani(1972)<17>
-			Kaskadorishqiptar(1998)(TV)[Himself-Guest]
-			Kohëelargët(1983)[PeshkopiAthanas]<5>
-			KomisariiDritës(1966)[PjetërMustakuqi]<7>
-			Kurhapendyertejetës(1986)
-			Kurhidheshinthemelet(1978)(TV)[BeqirAga]<2>
-			Kushvdesnëkëmbë(1985)[DajlanBeu]<3>
-			Liriavdekje(1979)[Bimbashi]<17>
-			Ngamesiierrësirës(1978)[Ugolini]<8>
-			Nëntoriidytë(1982)[IsaBoletini]<3>
-			Plagëtëvjetra(1968)<12>
-			Pylliilirisë(1976)[Kovi]<2>
-			Përballë(2015)[Himself]<2>
-			Rekonstruksioni(1988)(TV)
-			Shiratevjeshtës(1985)[Funksionar]<7>
-			Shokët(1982)[Nikolla]<3>
-			Tingujteluftës(1976)[Mësuesi]<2>
-			Tëpaftuarit(1985)
-			Vetmi(1990)
+Arbana, Reshat		Ada 2013  
+			Balada e Kurbinit 1990
+			Binarët 1987
+			Dora e ngrohtë 1983    
+			Duel i Heshtur 1967    
+			Fijet që priten 1976    
+			Flutura në kabinen time 1988
+			Fundi i një gjakmarrjeje 1983    
+			Gjallë 2009    
+			Gjeneral gramafoni 1978    
+			Gjurma 1970    
+			Gjurmë në kaltërsi 1981    
+			Gracka 1984    
+			Hije që mbeten pas 1985
+			I treti 1978 TV    
+			Intendenti 1981    
+			Kapedani 1972  
+			Kaskadori shqiptar 1998 TV  
+			Kohë e largët 1983    
+			Komisari i Dritës 1966    
+			Kur hapen dyert e jetës 1986
+			Kur hidheshin themelet 1978 TV    
+			Kush vdes në këmbë 1985    
+			Liri a vdekje 1979    
+			Nga mesi i errësirës 1978    
+			Nëntori i dytë 1982    
+			Plagë të vjetra 1968  
+			Pylli i lirisë 1976    
+			Përballë 2015    
+			Rekonstruksioni 1988 TV
+			Shirat e vjeshtës 1985    
+			Shokët 1982    
+			Tingujt e luftës 1976    
+			Të paftuarit 1985
+			Vetmi 1990
 
