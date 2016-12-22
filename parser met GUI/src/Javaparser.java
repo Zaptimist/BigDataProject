@@ -1,25 +1,49 @@
-/**
- * Created by Frank on 20-12-2016.
- */
 import java.io.*;
 import java.util.regex.*;
-public class Parser {
-    public static void main(String[] args) {
-        String fileData = "";
-        try{
 
-            fileData = readFile(new File("C:/Users/Frank/Desktop/actors.txt"));
+public class Javaparser 
+{
+    
+    static Javaparser p = new Javaparser();
+    static Parser GUI = new Parser();
+    
+    public static void main(String[] args) {
+        
+        
+        
+        GUI.setVisible(true);
+       
+         while(!GUI.hasStarted)
+        {
+          try
+          {
+              p.wait(100);
+          }
+          catch(Exception e)
+          {
+              
+          }
+        }
+        
+        
+        String fileData = "";
+        try
+        {
+ 
+            fileData = readFile(new File(GUI.file));
             fileData = cleanData(fileData);
             if(fileData == "")
-                System.out.println("no data");
+            System.out.println("no data");
             writeFile(fileData);
-        }catch(Exception e){
+        }
+        catch(Exception e)
+        {
             System.out.println(e.getMessage());
         }
-
-    }
-
-
+       
+}
+ 
+ 
     static String readFile(File file) throws IOException {
         String result = "";
         InputStream ips = new FileInputStream(file);
@@ -33,27 +57,21 @@ public class Parser {
         br.close();
         return result;
     }
-
-   /* static String cleanData(String data){
-        Pattern p = Pattern.compile("[^<\\s]");
-        Matcher m = p.matcher(data);
-        StringBuffer result = new StringBuffer();
-        while(m.find()){
-            m.appendReplacement(result, m.group() + "");
-        }
-        m.appendTail(result);
-        return result.toString();
-    } */
-
-    static String cleanData(String data){
-        //return data.replaceAll("[^a-zA-Z0-9\\s]","");
-        return data.replaceAll("((?s)(<|\\[).*?(>|\\]))|\\(|\\)","");
-
+    static String cleanData(String data)
+    {
+    //return data.replaceAll("[^a-zA-Z0-9\\s]","");
+    return data.replaceAll("(?s)(<|\\[).*?(>|\\])","");
     }
-
-    static void writeFile(String data) throws IOException{
-        File resultFile = new File("resultFile.txt");
+    
+    static void writeFile(String data) throws IOException
+    {   
+        String filename = "resultFile.csv";
+        File directory = new File(GUI.destination);
+        File resultFile = new File(directory, filename);
+        
         resultFile.createNewFile();
+        
+        
         FileWriter fw = new FileWriter(resultFile);
         BufferedWriter bw = new BufferedWriter(fw);
         PrintWriter fileOut = new PrintWriter(bw);
@@ -61,5 +79,7 @@ public class Parser {
         fileOut.close();
         System.out.println("done");
     }
-
+ 
+ 
+ 
 }
