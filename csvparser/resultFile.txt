@@ -1,47 +1,6 @@
-Arballo, Shawn		Deuce of Spades 2011    
 
-Arban			Le clochard milliardaire 1951
-
-Arban, Frank		Indiana Jones and the Relic of Gotham 2008    
-
-Arbana, Dritan		Bloodlands 2016  
-			Kickstart My Gandhi 2009 V
-			"East West 101" 2007 {A Prodigal Fear #2.2}  
-			"The Cut" 2009/I {Pursed Lips #1.4}    
-
-Arbana, Reshat		Ada 2013  
-			Balada e Kurbinit 1990
-			Binarët 1987
-			Dora e ngrohtë 1983    
-			Duel i Heshtur 1967    
-			Fijet që priten 1976    
-			Flutura në kabinen time 1988
-			Fundi i një gjakmarrjeje 1983    
-			Gjallë 2009    
-			Gjeneral gramafoni 1978    
-			Gjurma 1970    
-			Gjurmë në kaltërsi 1981    
-			Gracka 1984    
-			Hije që mbeten pas 1985
-			I treti 1978 TV    
-			Intendenti 1981    
-			Kapedani 1972  
-			Kaskadori shqiptar 1998 TV  
-			Kohë e largët 1983    
-			Komisari i Dritës 1966    
-			Kur hapen dyert e jetës 1986
-			Kur hidheshin themelet 1978 TV    
-			Kush vdes në këmbë 1985    
-			Liri a vdekje 1979    
-			Nga mesi i errësirës 1978    
-			Nëntori i dytë 1982    
-			Plagë të vjetra 1968  
-			Pylli i lirisë 1976    
-			Përballë 2015    
-			Rekonstruksioni 1988 TV
-			Shirat e vjeshtës 1985    
-			Shokët 1982    
-			Tingujt e luftës 1976    
-			Të paftuarit 1985
-			Vetmi 1990
-
+Arballo, Shawn,Deuce of Spades,2011
+Arban,,clochard milliardaire,1951
+Arban, Frank,Indiana Jones and the Relic of Gotham,2008
+Arbana, Dritan,Bloodlands,2016,Kickstart My Gandhi ,2009V,"East West 101" ,2007 {A Prodigal Fear#2.2},"The Cut" ,2009/I {Pursed Lips #1.4}
+Arbana, Reshat,Ada,2013,Balada e Kurbinit,1990,Binarët,1987,Dora e ngrohtë,1983,Duel i Heshtur,1967,Fijet që priten,1976,Flutura në kabinen time,1988,Fundi i një gjakmarrjeje,1983,Gjallë,2009,Gjeneral gramafoni,1978,Gjurma ,1970,Gjurmë në kaltërsi ,1981,Gracka ,1984,Hije që mbeten pas,1985,I treti ,1978 TV,Intendenti ,1981,Kapedani,1972,Kaskadori shqiptar ,1998 TV,Kohë e largët ,1983,Komisari i Dritës ,1966,Kur hapen dyert e jetës,1986,Kur hidheshin themelet ,1978 TV,Kush vdes në këmbë ,1985,Liri a vdekje,1979,Nga mesi i errësirës,1978,Nëntori i dytë ,1982,Plagë të vjetra,1968,Pylli i lirisë,1976,Përballë,2015,Rekonstruksioni ,1988TV,Shirat e vjeshtës,1985,Shokët,1982,Tingujt e luftës,1976,Të paftuarit,1985,Vetmi,1990
