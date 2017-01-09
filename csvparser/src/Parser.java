@@ -7,7 +7,7 @@ public class Parser {
     public static void main(String[] args) {
         String fileData = "";
         try{
-            fileData = readFile(new File("C:/Users/Frank/Desktop/actors.txt"));
+            fileData = readFile(new File("C:\\Users\\Frank\\Documents\\GitHub\\BigDataProject\\Ruud\\stringTestText1.txt"));
             //fileData = cleanData(fileData);
             if(fileData == "")
                 System.out.println("no data");
@@ -26,65 +26,77 @@ public class Parser {
         BufferedReader br = new BufferedReader(ipsr);
         String line;
         String actorName = "";
+        String regex = "----\t\t\t------";
+        String endRegex = "-----------------------------------------------------------------------------";
+        boolean hasFoundRegex = false;
         while((line = br.readLine()) != null){
-            System.out.println(line);
-            if(line.length() > 0)
+            if(hasFoundRegex)
             {
+                if(line.equals(endRegex))
+                    break;
+                System.out.println(line);
+                    if(line.length() > 0)
+                    {
 
-                if(line.contains("\"")){
-                    //line = line.replaceAll("((?s)(\").*?(\\}))","");
-                    //System.out.println(line);
-                }
-
-                if(Character.isWhitespace(line.charAt(0)))
-                {
-                    //result += line + ",";
-                    //line = line.replace("((?s)(\t).*?(.*))",",");
-                    //result += line;
-                    //System.out.println(line.replace("\t",","));
-                    if(line.contains("\"")){
-                        line = "";
-                    }else{
-                        line = line.replaceFirst("\t",",");
-                        line = line.replaceFirst("\\(",",");
-                        line = line.replaceAll("\t","");
-                        line = actorName + line;
-                    }
-
-                    //line = line.replaceAll("\t","");
-                    //line += ",";
-
-                    //result += line;
-
-                }else{
-                    //result += "\n";
-                    //assign actor name value
-
-                    actorName = line.split("\t",2)[0];
-                    actorName = actorName.replaceFirst(" ","");
-                    System.out.println(actorName);
-                    if(line.contains("\""))
-                        line = line.replaceAll("((?s)(\").*?(\\}))","");
-                    if(line.contains("(")){
-                        if(line.indexOf(",") > -1) {
-                            line = line.replaceFirst(" ", "");
-                            line = line.replaceAll("((?s)(\t).*?([^a-zA-Z0-9\\\\s]))", ",");
-                        }else{
-                            line = line.replaceFirst("\t",",");
-                            line = line.replaceAll("\t","");
+                        if(line.contains("\"")){
+                            //line = line.replaceAll("((?s)(\").*?(\\}))","");
+                            //System.out.println(line);
                         }
-                        line = line.replaceFirst("\\(",",");
-                    } else {
-                        line = line.replaceAll("\t","");
-                    }
-                }
-                line = line.trim().replaceAll("  +","");
-                int ind = line.lastIndexOf(" ");
-                if(ind >= 0){
-                    line = new StringBuilder(line).replace(ind,ind+1,"").toString();
+
+                        if(Character.isWhitespace(line.charAt(0)))
+                        {
+                            //result += line + ",";
+                            //line = line.replace("((?s)(\t).*?(.*))",",");
+                            //result += line;
+                            //System.out.println(line.replace("\t",","));
+                            if(line.contains("\"")){
+                                line = "";
+                            }else{
+                                line = line.replaceFirst("\t",",");
+                                line = line.replaceFirst("\\(",",");
+                                line = line.replaceAll("\t","");
+                                line = actorName + line;
+                            }
+
+                            //line = line.replaceAll("\t","");
+                            //line += ",";
+
+                            //result += line;
+
+                        }else{
+                            //result += "\n";
+                            //assign actor name value
+
+                            actorName = line.split("\t",2)[0];
+                            actorName = actorName.replaceFirst(" ","");
+                            System.out.println(actorName);
+                            if(line.contains("\""))
+                                line = line.replaceAll("((?s)(\").*?(\\}))","");
+                            if(line.contains("(")){
+                                if(line.indexOf(",") > -1) {
+                                    line = line.replaceFirst(" ", "");
+                                    line = line.replaceAll("((?s)(\t).*?([^a-zA-Z0-9\\\\s]))", ",");
+                                }else{
+                                    line = line.replaceFirst("\t",",");
+                                    line = line.replaceAll("\t","");
+                                }
+                                line = line.replaceFirst("\\(",",");
+                            } else {
+                                line = line.replaceAll("\t","");
+                            }
+                        }
+                        line = line.trim().replaceAll("  +","");
+                        int ind = line.lastIndexOf(" ");
+                        if(ind >= 0){
+                            line = new StringBuilder(line).replace(ind,ind+1,"").toString();
+                        }
+                        if(hasFoundRegex)
+                            result += line.replaceAll("((?s)(<|\\[|\").*?(>|\\]|\\}))|\\(|\\)","") + "\n";
                 }
 
-                result += line.replaceAll("((?s)(<|\\[|\").*?(>|\\]|\\}))|\\(|\\)","") + "\n";
+            } else {
+                System.out.print("no regex");
+                hasFoundRegex = (line.equals(regex));
             }
 
         }

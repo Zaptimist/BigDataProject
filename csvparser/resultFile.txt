@@ -1,44 +1,4 @@
-﻿Arballo,Shawn,Deuce of Spades,2011
-Arban,Le clochard milliardaire,1951
-Arban,Frank,Indiana Jones and the Relic of Gotham,2008
-Arbana,Dritan
-Arbana,Dritan,Bloodlands,2016
-Arbana,Dritan,Kickstart My Gandhi ,2009V
-
-
-Arbana,Reshat,Ada,2013
-Arbana,Reshat,Balada e Kurbinit,1990
-Arbana,Reshat,Binarët,1987
-Arbana,Reshat,Dora e ngrohtë,1983
-Arbana,Reshat,Duel i Heshtur,1967
-Arbana,Reshat,Fijet që priten,1976
-Arbana,Reshat,Flutura në kabinen time,1988
-Arbana,Reshat,Fundi i një gjakmarrjeje,1983
-Arbana,Reshat,Gjallë,2009
-Arbana,Reshat,Gjeneral gramafoni,1978
-Arbana,Reshat,Gjurma ,1970
-Arbana,Reshat,Gjurmë në kaltërsi ,1981
-Arbana,Reshat,Gracka ,1984
-Arbana,Reshat,Hije që mbeten pas,1985
-Arbana,Reshat,I treti ,1978 TV
-Arbana,Reshat,Intendenti ,1981
-Arbana,Reshat,Kapedani,1972
-Arbana,Reshat,Kaskadori shqiptar ,1998 TV
-Arbana,Reshat,Kohë e largët ,1983
-Arbana,Reshat,Komisari i Dritës ,1966
-Arbana,Reshat,Kur hapen dyert e jetës,1986
-Arbana,Reshat,Kur hidheshin themelet ,1978 TV
-Arbana,Reshat,Kush vdes në këmbë ,1985
-Arbana,Reshat,Liri a vdekje,1979
-Arbana,Reshat,Nga mesi i errësirës,1978
-Arbana,Reshat,Nëntori i dytë ,1982
-Arbana,Reshat,Plagë të vjetra,1968
-Arbana,Reshat,Pylli i lirisë,1976
-Arbana,Reshat,Përballë,2015
-Arbana,Reshat,Rekonstruksioni ,1988TV
-Arbana,Reshat,Shirat e vjeshtës,1985
-Arbana,Reshat,Shokët,1982
-Arbana,Reshat,Tingujt e luftës,1976
-Arbana,Reshat,Të paftuarit,1985
-Arbana,Reshat,Vetmi,1990
+'ElPescaíto', Antonio,Almendros - Plaza nueva - ,2000
+'ElPlojo', Luis,la calle ,2001
+'elPortugues', Janny,contrabandista,1982
 
