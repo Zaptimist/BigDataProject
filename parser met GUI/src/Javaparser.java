@@ -1,19 +1,20 @@
 import java.io.*;
 import java.util.regex.*;
+import javax.swing.JOptionPane;
 
-public class Javaparser 
+
+public class Javaparser
 {
     
     static Javaparser p = new Javaparser();
     static Parser GUI = new Parser();
     
-    public static void main(String[] args) {
-        
-        
+    public static void main(String[] args) 
+    {   
         
         GUI.setVisible(true);
        
-         while(!GUI.hasStarted)
+        while(!GUI.hasStarted)
         {
           try
           {
@@ -25,7 +26,7 @@ public class Javaparser
           }
         }
         
-        
+        System.out.println("abc");
         String fileData = "";
         try
         {
@@ -44,7 +45,8 @@ public class Javaparser
 }
  
  
-    static String readFile(File file) throws IOException {
+    static String readFile(File file) throws IOException 
+    {
         String result = "";
         InputStream ips = new FileInputStream(file);
         InputStreamReader ipsr = new InputStreamReader(ips);
@@ -77,9 +79,9 @@ public class Javaparser
         PrintWriter fileOut = new PrintWriter(bw);
         fileOut.println(data);
         fileOut.close();
-        System.out.println("done");
+        JOptionPane.showMessageDialog(null, "Done!");
+        GUI.setVisible(false);
     }
- 
  
  
 }
