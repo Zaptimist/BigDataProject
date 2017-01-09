@@ -7,17 +7,16 @@ public class Parser {
     public static void main(String[] args) {
         String fileData = "";
         try{
-
             fileData = readFile(new File("C:/Users/Frank/Desktop/actors.txt"));
-            fileData = cleanData(fileData);
+            //fileData = cleanData(fileData);
             if(fileData == "")
                 System.out.println("no data");
             writeFile(fileData);
         }catch(Exception e){
             System.out.println(e.getMessage());
         }
-
     }
+
 
 
     static String readFile(File file) throws IOException {
@@ -26,9 +25,39 @@ public class Parser {
         InputStreamReader ipsr = new InputStreamReader(ips);
         BufferedReader br = new BufferedReader(ipsr);
         String line;
+        //String name;
         while((line = br.readLine()) != null){
             System.out.println(line);
-            result += line + "\n";
+            if(line.length() > 0)
+            {
+                if(Character.isWhitespace(line.charAt(0)))
+                {
+                    //result += line + ",";
+                    //line = line.replace("((?s)(\t).*?(.*))",",");
+                    //result += line;
+                    //System.out.println(line.replace("\t",","));
+                    line = line.replaceFirst("\t",",");
+                    line = line.replaceFirst("\\(",",");
+                    line = line.replaceAll("\t","");
+                    //line = line.replaceAll("\t","");
+                    //line += ",";
+
+                    //result += line;
+
+                }else{
+                    result += "\n";
+                    line = line.replaceFirst("\\(",",");
+                    line = line.replaceAll("((?s)(\t).*?([^a-zA-Z0-9\\\\s]))",",");
+                    //result += line;
+                }
+                line = line.trim().replaceAll("  +","");
+                int ind = line.lastIndexOf(" ");
+                if(ind >= 0){
+                    line = new StringBuilder(line).replace(ind,ind+1,"").toString();
+                }
+                result += line.replaceAll("((?s)(<|\\[).*?(>|\\]))|\\(|\\)","");
+            }
+
         }
         br.close();
         return result;
@@ -48,7 +77,6 @@ public class Parser {
     static String cleanData(String data){
         //return data.replaceAll("[^a-zA-Z0-9\\s]","");
         return data.replaceAll("((?s)(<|\\[).*?(>|\\]))|\\(|\\)","");
-
     }
 
     static void writeFile(String data) throws IOException{
