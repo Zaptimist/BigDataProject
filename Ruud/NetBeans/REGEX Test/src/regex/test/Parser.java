@@ -65,7 +65,7 @@ public class Parser {
        // regex code Ruud remove all lines with: " (series)
         //return data.replaceAll("(?m)\".*\r?\n|\t", "");
         //\-{4}\t{3}\-{6}(.*?)\-{76}
-        return data.replaceAll("(?m)-{4}\t{3}-{6}(.*?)-{77}", "");
+        return data.replaceAll("-{4}\t{3}-{6}", "");
     }
 
     static void writeFile(String data) throws IOException{

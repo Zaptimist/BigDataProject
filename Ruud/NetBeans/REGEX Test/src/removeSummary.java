@@ -3,7 +3,7 @@
  */
 import java.io.*;
 import java.util.regex.*;
-public class Parser {
+public class removeSummary {
     public static void main(String[] args) {
         String fileData = "";
         try{
@@ -25,12 +25,22 @@ public class Parser {
         InputStreamReader ipsr = new InputStreamReader(ips);
         BufferedReader br = new BufferedReader(ipsr);
         String line;
+        String regex = "-{4}\t{3}-{6}";
+        Boolean summary = false;
         
         //String name;
         while((line = br.readLine()) != null){
             System.out.println(line);
             if(line.length() > 0)
             {
+                if(!summary)
+                    {
+                      if(line == regex)
+                      {
+                          summary = true;
+                      }   
+                    }
+                
                 if(Character.isWhitespace(line.charAt(0)))
                 {
                     //result += line + ",";
@@ -57,7 +67,9 @@ public class Parser {
                 if(ind >= 0){
                     line = new StringBuilder(line).replace(ind,ind+1,"").toString();
                 }
-            result += line.replaceAll("((?s)(<|\\[).*?(>|\\]))|\\(|\\)","");   
+                if (summary){
+                 result += line.replaceAll("((?s)(<|\\[).*?(>|\\]))|\\(|\\)","");   
+                }
             }
 
         }
