@@ -12,13 +12,13 @@ import java.io.*;
 
 public class Parser {    
     public static void main(String[] args) {
-        //check runtime
+        //check runtime code Ruud
         long startTime = System.currentTimeMillis();
         
         String fileData = "";
         try{
 
-            fileData = readFile(new File("D:\\IMDB\\stringTestText.txt"));
+            fileData = readFile(new File("D:\\IMDB\\stringTestText1.txt"));
             fileData = cleanData(fileData);
             if(fileData == "")
                 System.out.println("no data");
@@ -63,7 +63,9 @@ public class Parser {
 //        return data.replaceAll("(?s)(<|\\[).*?(>|\\])","");
 
        // regex code Ruud remove all lines with: " (series)
-        return data.replaceAll("(?m)\".*\r?\n|\t", "");
+        //return data.replaceAll("(?m)\".*\r?\n|\t", "");
+        //\-{4}\t{3}\-{6}(.*?)\-{76}
+        return data.replaceAll("-{4}\t{3}-{6}", "");
     }
 
     static void writeFile(String data) throws IOException{
