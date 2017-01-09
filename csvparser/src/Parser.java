@@ -7,7 +7,6 @@ public class Parser {
     public static void main(String[] args) {
         String fileData = "";
         try{
-
             fileData = readFile(new File("C:/Users/Frank/Desktop/actors.txt"));
             fileData = cleanData(fileData);
             if(fileData == "")
@@ -16,8 +15,8 @@ public class Parser {
         }catch(Exception e){
             System.out.println(e.getMessage());
         }
-
     }
+
 
 
     static String readFile(File file) throws IOException {
@@ -26,9 +25,24 @@ public class Parser {
         InputStreamReader ipsr = new InputStreamReader(ips);
         BufferedReader br = new BufferedReader(ipsr);
         String line;
+        String name;
         while((line = br.readLine()) != null){
             System.out.println(line);
-            result += line + "\n";
+            if(line.length() > 0)
+            {
+                if(line.contains(","))
+                {
+                    name = line.replace("((?s)(\t).*?(.*))","");
+                    System.out.println(name);
+                }
+                if(Character.isWhitespace(line.charAt(0)))
+                {
+                    result += line + ",";
+                }else
+                    result += line + "\n";
+            }else
+                result += line + "\n";
+
         }
         br.close();
         return result;
@@ -47,8 +61,7 @@ public class Parser {
 
     static String cleanData(String data){
         //return data.replaceAll("[^a-zA-Z0-9\\s]","");
-        return data.replaceAll("((?s)(<|\\[).*?(>|\\]))|\\(|\\)","");
-
+        return data.replaceAll("((?s)(<|\\[).*?(>|\\]))|\\(|\\)|\t","");
     }
 
     static void writeFile(String data) throws IOException{
