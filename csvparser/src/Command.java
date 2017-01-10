@@ -9,7 +9,7 @@ public abstract class Command {
     public String regex;
     public String endRegex;
     public String resultName;
-    public String filePath = "C:\\Users\\Frank\\Documents\\GitHub\\BigDataProject\\Ruud\\stringTestText1.txt";
+    public String filePath = "C:\\Users\\Frank\\Desktop\\actors.txt";
 
     abstract String readFile(File file) throws IOException;
 
