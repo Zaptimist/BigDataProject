@@ -8,7 +8,7 @@ public abstract class Command {
     public String regex;
     public String endRegex;
     public String resultName;
-    public String filePath = "D:\\Google Drive\\Ruud\\Eigen bestanden\\SCHOOLCARIERRE\\OPLEIDING INFORMATICA\\jaar 2\\Periode 2\\BigDataProject\\sietse\\testmap\\ratingstest.list";
+    public String filePath = "C:\\Users\\Sietse\\Desktop\\github\\BigDataProject\\sietse\\testmap\\movieDuration.list";
 
 
 
@@ -63,5 +63,17 @@ public abstract class Command {
      */
     String replaceTwoSpaceWithComma (String line){
         return line.replaceAll("\\s{2,}", ",");
+    }
+    
+    String removeSpaceAfterBracket(String line){
+        int index = line.indexOf(")");
+        if(index > -1){
+            if(line.charAt(index + 1) == ' ')
+            {
+                StringBuffer sb = new StringBuffer(line);
+                line = sb.deleteCharAt(index + 1).toString();
+            }
+        }
+        return line;
     }
 }
