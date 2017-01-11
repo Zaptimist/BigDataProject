@@ -30,7 +30,6 @@ public class Actors extends Command {
                         else{
                             if(containsComma(line)){
                                 line = line.replaceAll(",","");
-                                System.out.println("found comma");
                             }
 
                             line = replaceTabsWithComma(line);
@@ -50,7 +49,6 @@ public class Actors extends Command {
                         else{
                             if(containsComma(line)){
                                 line = line.replaceAll(",","");
-                                System.out.println("found comma");
                             }
                             if(!line.startsWith("\t")){
                                 line = "," + line;
