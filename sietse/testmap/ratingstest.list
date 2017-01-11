@@ -1,0 +1,548 @@
+CRC: 0x0F2AC6E1  File: ratings.list  Date: Fri Jan  6 00:00:00 2017
+
+From: vote@imdb.com (Movie Ratings Report)
+Subject: Movie Ratings Report
+
+For information on the list format, and on submitting your ratings,
+see the end of this posting.
+
+Details on obtaining this posting via FTP are also given below.
+
+Comments, suggestions etc. via e-mail to <help@imdb.com>
+
+TOP 250 MOVIES (25000+ VOTES)
+
+The formula used to calculate the top 250 movies is:
+
+  weighted rank = (v/(v+k))*X + (k/(v+k))*C
+
+  where:
+
+    X = average for the movie (mean)
+    v = number of votes for the movie
+    k = minimum votes required to be listed in the top 250 (currently 25000)
+    C = the mean vote across the whole report (currently 6.90)
+
+note: for this top 250, only votes from regular voters are considered.
+
+New  Distribution  Votes  Rank  Title
+	  0000000125  1750698   9.2  The Shawshank Redemption (1994)
+      0000000125  1195792   9.2  The Godfather (1972)
+      0000000124  820872   9.0  The Godfather: Part II (1974)
+      0000000124  1734378   8.9  The Dark Knight (2008)
+      0000000133  469138   8.9  12 Angry Men (1957)
+      0000000133  896902   8.9  Schindler's List (1993)
+      0000000123  1370900   8.9  Pulp Fiction (1994)
+      0000000124  1257313   8.9  The Lord of the Rings: The Return of the King (2003)
+      0000000123  520789   8.8  Il buono, il brutto, il cattivo (1966)
+      0000000133  1398548   8.8  Fight Club (1999)
+      0000000123  1279486   8.8  The Lord of the Rings: The Fellowship of the Ring (2001)
+      0000000223  872237   8.7  Star Wars: Episode V - The Empire Strikes Back (1980)
+      0000000233  1304482   8.7  Forrest Gump (1994)
+      0000000133  1525386   8.7  Inception (2010)
+      0000000223  1139082   8.7  The Lord of the Rings: The Two Towers (2002)
+      0000000232  702510   8.7  One Flew Over the Cuckoo's Nest (1975)
+      0000000232  754798   8.7  Goodfellas (1990)
+      0000000233  1260414   8.7  The Matrix (1999)
+      0000000123  237008   8.6  Shichinin no samurai (1954)
+      0000000223  945856   8.6  Star Wars (1977)
+      0000000232  550653   8.6  Cidade de Deus (2002)
+      0000001232  1063506   8.6  Se7en (1995)
+      0000001232  923946   8.6  The Silence of the Lambs (1991)
+      0000001223  288938   8.6  It's a Wonderful Life (1946)
+      0000000232  767390   8.6  The Usual Suspects (1995)
+      0000000233  439703   8.6  La vita è bella (1997)
+      0000000124   33198   8.6  La La Land (2016/I)
+      0000001232  753820   8.5  Léon (1994)
+      0000000223  438826   8.5  Sen to Chihiro no kamikakushi (2001)
+      0000001232  915987   8.5  Saving Private Ryan (1998)
+      0000001223  224224   8.5  C'era una volta il West (1968)
+      0000001232  809380   8.5  American History X (1998)
+      0000000123  988349   8.5  Interstellar (2014)
+      0000001223  400126   8.5  Casablanca (1942)
+      0000001222  438705   8.5  Psycho (1960)
+      0000001223  113366   8.5  City Lights (1931)
+      0000001232  818408   8.5  The Green Mile (1999)
+      0000001222  683064   8.5  Raiders of the Lost Ark (1981)
+      0000000232  530933   8.5  Intouchables (2011)
+      0000001222  149915   8.5  Modern Times (1936)
+      0000001222  327800   8.5  Rear Window (1954)
+      0000001232  905627   8.5  The Departed (2006)
+      0000001232  520300   8.5  The Pianist (2002)
+      0000001222  769486   8.5  Terminator 2: Judgment Day (1991)
+      0000001222  762145   8.5  Back to the Future (1985)
+      0000001232  437102   8.5  Whiplash (2014)
+      0000001222  1018448   8.5  Gladiator (2000)
+      0000001232  874962   8.5  Memento (2000)
+      0000001222  464933   8.5  Apocalypse Now (1979)
+      0000001232  878309   8.5  The Prestige (2006)
+      0000001223  672610   8.5  The Lion King (1994)
+      0000001222  585398   8.4  Alien (1979)
+      0000001223  353589   8.4  Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb (1964)
+      0000001222  144536   8.4  Sunset Blvd. (1950)
+      0000001222  143775   8.4  The Great Dictator (1940)
+      0000001232  268977   8.4  Das Leben der Anderen (2006)
+      0000001222  159275   8.4  Nuovo Cinema Paradiso (1988)
+      0000001222  125813   8.4  Paths of Glory (1957)
+      0000001223  146268   8.4  Hotaru no haka (1988)
+      0000001232  997246   8.4  Django Unchained (2012)
+      0000001222  634706   8.4  The Shining (1980)
+      0000001222  748252   8.4  WALL·E (2008)
+      0000001223  1184315   8.4  The Dark Knight Rises (2012)
+	        1000001112     166   6.0  "Top Coppers" (2015)
+      .01.011201      14   6.6  "Top Coppers" (2015) {The Chill of the Cockney Freezer (#1.1)}
+      ..2...2112       8   7.1  "Top Coppers" (2015) {The Girdle of Randall Rogers (#1.2)}
+      11..2.1..2       7   5.7  "Top Coppers" (2015) {The Passion of the Chris (#1.6)}
+      .1..1.31.1       6   6.5  "Top Coppers" (2015) {The Twist of the French Nicker (#1.4)}
+      22...4...2       5   5.0  "Top Coppers" (2015) {The Venom of Doctor Schafer (#1.3)}
+      00.0001113      36   7.7  "Top Cops" (1990)
+      0......233      15   8.5  "Top Cops" (1990) {Dennis Pardini/Larry Robinson/Michael Carew (#2.6)}
+      0.....0116      49   9.0  "Top Decking" (2012)
+      1000011101     178   5.9  "Top Design" (2007)
+      ..2..22.22       5   7.0  "Top Design" (2007) {Mystery Judge (#1.1)}
+      1......115       6   8.0  "Top Flight Security" (2013)
+      2000111000     398   4.3  "Top Gear Australia" (2008)
+      ....2.44..       5   7.0  "Top Gear Australia" (2008) {(#3.2)}
+      3.1..11..1       6   4.7  "Top Gear Australia" (2008) {Ford vs. Holden! (#1.2)}
+      31.2.1...1       8   3.6  "Top Gear Australia" (2008) {Premiere (#1.1)}
+      .1...11123       9   7.9  "Top Gear Australia" (2008) {The Ashes Special (#3.1)}
+      .0010.1001      11   6.3  "Top Gear France" (2015)
+      2..1..22..       7   5.1  "Top Gear Italia" (2016)
+      0..01.1002      11   6.9  "Top Gear Motorsport" (1995)
+      2000001102    5267   5.3  "Top Gear USA" (2008)
+      1....033.0      13   6.6  "Top Gear USA" (2008) {150 MPH Challenge (#3.10)}
+      11...121.1       7   5.9  "Top Gear USA" (2008) {24 Hours of Budget Racing (#6.3)}
+      2...002200      15   6.2  "Top Gear USA" (2008) {80's Power (#5.3)}
+      2....1113.       8   6.2  "Top Gear USA" (2008) {Adam's Show (#3.12)}
+      0....223.0      14   6.9  "Top Gear USA" (2008) {Alaskan Adventure (#4.2)}
+      1..1.12..4       9   7.2  "Top Gear USA" (2008) {America vs. Europe (#6.2)}
+      0....0330.      11   6.9  "Top Gear USA" (2008) {America's Biggest Cars (#4.4)}
+      1.00021.01      13   5.8  "Top Gear USA" (2008) {America's Strongest Pickup (#2.3)}
+      0.....3201      11   7.5  "Top Gear USA" (2008) {America's Toughest Car (#3.8)}
+      1..0.02102      33   7.1  "Top Gear USA" (2008) {America's Toughest Trucks (#1.9)}
+      1....313..       6   6.0  "Top Gear USA" (2008) {American Aftermarket (#6.6)}
+      0...0.1222      16   8.0  "Top Gear USA" (2008) {American Muscle (#5.1)}
+      0...0.2210      11   7.2  "Top Gear USA" (2008) {American Supercars (#4.8)}
+      20.0.10111      18   5.6  "Top Gear USA" (2008) {Appalachian Trail (#5.10)}
+      1..00032.1      23   6.3  "Top Gear USA" (2008) {Beater Boot Camp (#1.5)}
+      1..0012201      23   6.7  "Top Gear USA" (2008) {Beating Tanner (#2.7)}
+      2000101012      20   5.8  "Top Gear USA" (2008) {Best of Top Gear (#1.10)}
+      1..00111.2      26   6.7  "Top Gear USA" (2008) {Better Gas Mileage Pickup Truck Alternatives (#2.1)}
+      1.....412.       7   6.9  "Top Gear USA" (2008) {Big Bad Trucks (#4.9)}
+      1..0001112      27   6.9  "Top Gear USA" (2008) {Big Rigs (#2.9)}
+      1..02011.1      35   5.9  "Top Gear USA" (2008) {Blind Drift (#1.2)}
+      0....1411.      12   6.8  "Top Gear USA" (2008) {Can Cars Float (#4.6)}
+      0000001112      66   7.2  "Top Gear USA" (2008) {Car vs. Plane (#1.8)}
+      .....244..       5   7.2  "Top Gear USA" (2008) {Cars for Life (#6.4)}
+      0..00.4211      19   7.2  "Top Gear USA" (2008) {Coast to Coast (#4.1)}
+      1000101101      51   5.5  "Top Gear USA" (2008) {Cobra Attack (#1.1)}
+      1...0122.2      18   7.1  "Top Gear USA" (2008) {College Cars (#3.7)}
+      1....02122      19   7.2  "Top Gear USA" (2008) {Continental Divide (#2.12)}
+      ...1..2112       7   7.9  "Top Gear USA" (2008) {Cuba (#6.10)}
+      1...011301      20   6.8  "Top Gear USA" (2008) {Cult Classics (#3.3)}
+      1..1.11201      15   6.5  "Top Gear USA" (2008) {Dangerous Cars (#2.11)}
+      1.0.0.2112      21   7.0  "Top Gear USA" (2008) {Death Valley (#2.4)}
+      0...11320.      15   6.6  "Top Gear USA" (2008) {Desert Trailblazers (#5.2)}
+      1....12321      10   7.3  "Top Gear USA" (2008) {Doomsday Drive (#3.13)}
+      1...1123.2      10   7.0  "Top Gear USA" (2008) {Family Vehicle Showdown (#5.6)}
+      1...013200      26   6.2  "Top Gear USA" (2008) {Fast in Florida (#1.6)}
+      1.0.0211.1      22   6.0  "Top Gear USA" (2008) {First Cars (#2.2)}
+      2.0.102200      28   5.6  "Top Gear USA" (2008) {Flying Coupe DeVille (#1.3)}
+      1..1..332.      10   6.8  "Top Gear USA" (2008) {Fountain of Youth (#4.10)}
+      0....3400.      12   6.4  "Top Gear USA" (2008) {Fully Charged (#4.7)}
+      1..0.03100      24   6.2  "Top Gear USA" (2008) {Halo vs. Velociraptor (#1.4)}
+      1...0012.2      21   7.0  "Top Gear USA" (2008) {Hollywood Cars (#2.8)}
+      1...0.2221      14   7.1  "Top Gear USA" (2008) {Limos (#2.14)}
+      1.0.0122.1      22   6.3  "Top Gear USA" (2008) {Luxury Car Challenge (#2.5)}
+      1.....42.1      13   6.8  "Top Gear USA" (2008) {Mammoth Mountain (#3.14)}
+      .....262..       5   7.0  "Top Gear USA" (2008) {Military Might (#6.5)}
+      1.....33.0      13   6.7  "Top Gear USA" (2008) {Minnesota Ice Driving (#3.15)}
+      1...0.1211      16   7.3  "Top Gear USA" (2008) {Monument to Moab (#3.6)}
+      1..0022200      15   6.2  "Top Gear USA" (2008) {Muscle Cars (#2.10)}
+      0....10410      13   7.4  "Top Gear USA" (2008) {Need for Speed (#5.8)}
+      0.1..111.3      13   6.8  "Top Gear USA" (2008) {Off Road Big Rigs (#5.5)}
+      0...00212.      11   6.9  "Top Gear USA" (2008) {Off Road Racing (#4.3)}
+      1....123.1      16   7.0  "Top Gear USA" (2008) {One Tank of Gas (#3.4)}
+      1...001302      26   7.3  "Top Gear USA" (2008) {Police Cars (#3.1)}
+      2...222..2       5   5.8  "Top Gear USA" (2008) {Postal (#6.7)}
+      1.....3301      16   7.1  "Top Gear USA" (2008) {RVs (#3.9)}
+      1....213.1      13   6.6  "Top Gear USA" (2008) {Rut's Show (#2.15)}
+      1...112201      19   6.8  "Top Gear USA" (2008) {Small Cars (#3.2)}
+      1....323..       9   6.3  "Top Gear USA" (2008) {Snow Show (#5.4)}
+      0...11311.      13   6.5  "Top Gear USA" (2008) {Sturgis (#4.5)}
+      1....113.3      20   7.7  "Top Gear USA" (2008) {Supercars (#2.13)}
+      1....02220      14   7.1  "Top Gear USA" (2008) {Taxis (#3.11)}
+      10.0011001      21   6.1  "Top Gear USA" (2008) {The $500 Challenge (#2.6)}
+      1.0..20201      14   6.5  "Top Gear USA" (2008) {The Tractor Challenge (#3.5)}
+      1..01031.0      23   5.8  "Top Gear USA" (2008) {Used Car Salesmen (#1.7)}
+      1..0.02202      15   6.9  "Top Gear USA" (2008) {Viking Trucks (#3.16)}
+      1....12311       9   7.1  "Top Gear USA" (2008) {Weekend Race Cars (#5.9)}
+      1..1..2121       8   6.9  "Top Gear USA" (2008) {What Can It Take (#5.7)}
+      2.....44..       5   6.2  "Top Gear USA" (2008) {Winter Drop Tops (#6.8)}
+      1.....1212       7   7.6  "Top Gear USA" (2008) {Worst Cars (#2.16)}
+      0000000114   22523   8.4  "Top Gear" (1978)
+      0...0.0015      14   8.5  "Top Gear" (1978) {(#1.1)}
+      ....2..224       5   8.4  "Top Gear" (1978) {(#1.10)}
+      1...1..113       6   7.2  "Top Gear" (1978) {(#1.2)}
+      ....1..313       6   8.3  "Top Gear" (1978) {(#1.3)}
+      ....1..115       6   8.7  "Top Gear" (1978) {(#1.4)}
+      ....2..224       5   8.4  "Top Gear" (1978) {(#1.5)}
+      1...1..113       6   7.2  "Top Gear" (1978) {(#1.6)}
+      ....2..224       5   8.4  "Top Gear" (1978) {(#1.7)}
+      ....2..224       5   8.4  "Top Gear" (1978) {(#1.8)}
+      ....2..224       5   8.4  "Top Gear" (1978) {(#1.9)}
+      2...0.1012      12   6.5  "Top Gear" (1978) {(#11.5)}
+      1......115       6   8.0  "Top Gear" (1978) {(#11.6)}
+      ......1115       6   9.0  "Top Gear" (1978) {(#11.7)}
+      1...010021      12   6.8  "Top Gear" (1978) {(#11.8)}
+      ......1115       6   9.0  "Top Gear" (1978) {(#12.7)}
+      2.0..10022      14   6.4  "Top Gear" (1978) {(#13.8)}
+      .....1.115       6   8.8  "Top Gear" (1978) {(#14.8)}
+      ...1...115       6   8.5  "Top Gear" (1978) {(#15.10)}
+      1..1...113       6   7.0  "Top Gear" (1978) {(#16.2)}
+      1.....1123       8   8.0  "Top Gear" (1978) {(#16.3)}
+      ..1..1.3.3       6   7.5  "Top Gear" (1978) {(#16.8)}
+      ......33.3       6   8.3  "Top Gear" (1978) {(#16.9)}
+      1..1...3.3       6   6.8  "Top Gear" (1978) {(#17.2)}
+      1..1...3.3       6   6.8  "Top Gear" (1978) {(#17.4)}
+      1.....13.3       6   7.3  "Top Gear" (1978) {(#17.5)}
+      ....1.13.3       6   8.0  "Top Gear" (1978) {(#18.12)}
+      1..1...3.3       6   6.8  "Top Gear" (1978) {(#18.4)}
+      1..1...122       7   7.3  "Top Gear" (1978) {(#19.1)}
+      2......132       8   7.1  "Top Gear" (1978) {(#2.10)}
+      1....1.3.3       6   7.2  "Top Gear" (1978) {(#20.2)}
+      .......3.6       6   9.3  "Top Gear" (1978) {(#20.6)}
+      1.....1222       8   7.8  "Top Gear" (1978) {(#20.7)}
+      ...1...313       8   8.4  "Top Gear" (1978) {(#21.1)}
+      ..11...4.2       7   7.3  "Top Gear" (1978) {(#21.2)}
+      2....11102      13   6.5  "Top Gear" (1978) {(#21.3)}
+      1...1..3.3       6   7.0  "Top Gear" (1978) {(#22.8)}
+      2......212       7   6.7  "Top Gear" (1978) {(#23.6)}
+      1......222       7   7.9  "Top Gear" (1978) {(#26.6)}
+      2......222       8   7.0  "Top Gear" (1978) {(#26.7)}
+      1......222       7   7.9  "Top Gear" (1978) {(#27.10)}
+      2.0...0201      11   6.0  "Top Gear" (1978) {(#27.3)}
+      20...01102      13   6.2  "Top Gear" (1978) {(#27.9)}
+      30..0.0102      13   5.6  "Top Gear" (1978) {(#28.11)}
+      2......222       8   7.0  "Top Gear" (1978) {(#29.16)}
+      20.1..0102      13   5.8  "Top Gear" (1978) {(#30.12)}
+      2......213       8   7.1  "Top Gear" (1978) {(#30.8)}
+      2......222       8   7.0  "Top Gear" (1978) {(#32.1)}
+      2......222       8   7.0  "Top Gear" (1978) {(#32.12)}
+      1....11212       8   7.4  "Top Gear" (1978) {(#33.3)}
+      1.....13.3       6   7.3  "Top Gear" (1978) {(#33.5)}
+      1.....13.3       6   7.3  "Top Gear" (1978) {(#34.14)}
+      ......1214       7   8.9  "Top Gear" (1978) {(#34.2)}
+      1....11112       7   7.3  "Top Gear" (1978) {(#35.10)}
+      .....11113       6   8.3  "Top Gear" (1978) {(#35.11)}
+      ..1...1113       6   7.8  "Top Gear" (1978) {(#35.13)}
+      ..1...1113       6   7.8  "Top Gear" (1978) {(#35.14)}
+      1....02111      12   6.9  "Top Gear" (1978) {(#36.1)}
+      1.....1113       6   7.5  "Top Gear" (1978) {(#36.12)}
+      ...1..1.33       6   8.2  "Top Gear" (1978) {(#36.3)}
+      1.....13.3       6   7.3  "Top Gear" (1978) {(#36.5)}
+      ......3113       6   8.5  "Top Gear" (1978) {(#36.7)}
+      2......222       8   7.0  "Top Gear" (1978) {(#37.10)}
+      2......222       8   7.0  "Top Gear" (1978) {(#37.16)}
+      2......213       8   7.1  "Top Gear" (1978) {(#37.7)}
+      2.0.1.0012      13   6.1  "Top Gear" (1978) {(#38.11)}
+      1......222       7   7.9  "Top Gear" (1978) {(#38.12)}
+      2......222       8   7.0  "Top Gear" (1978) {(#38.13)}
+      2.0..11102      14   6.2  "Top Gear" (1978) {(#39.1)}
+      1....1.3.3       6   7.2  "Top Gear" (1978) {(#39.10)}
+      2.....2202      13   6.7  "Top Gear" (1978) {(#39.11)}
+      1...1..122       7   7.4  "Top Gear" (1978) {(#39.7)}
+      1......223       8   8.1  "Top Gear" (1978) {(#40.15)}
+      20.00.0102      14   5.5  "Top Gear" (1978) {(#40.3)}
+      1......222       7   7.9  "Top Gear" (1978) {(#40.9)}
+      3...0.0102      12   5.9  "Top Gear" (1978) {(#43.1)}
+      2......213       8   7.1  "Top Gear" (1978) {(#43.9)}
+      2......213       8   7.1  "Top Gear" (1978) {(#44.11)}
+      .......2.7       7   9.4  "Top Gear" (1978) {(#45.1)}
+      1......222       7   7.9  "Top Gear" (1978) {(#45.11)}
+      200..00102      14   5.5  "Top Gear" (1978) {(#45.14)}
+      .......513       6   8.8  "Top Gear" (1978) {(#45.21)}
+      1......412       7   7.7  "Top Gear" (1978) {(#45.23)}
+      1......412       7   7.7  "Top Gear" (1978) {(#45.24)}
+      ...2...312       8   7.6  "Top Gear" (1978) {(#45.25)}
+      ...2...312       8   7.6  "Top Gear" (1978) {(#45.26)}
+      ...2...312       8   7.6  "Top Gear" (1978) {(#45.27)}
+      ...2...312       8   7.6  "Top Gear" (1978) {(#45.28)}
+      2001..02.2      14   5.5  "Top Gear" (1978) {(#45.29)}
+      2......223       9   7.3  "Top Gear" (1978) {(#45.3)}
+      ...2...312       8   7.6  "Top Gear" (1978) {(#45.30)}
+      ...2...312       8   7.6  "Top Gear" (1978) {(#45.31)}
+      ...2...312       8   7.6  "Top Gear" (1978) {(#45.32)}
+      ...2...312       8   7.6  "Top Gear" (1978) {(#45.33)}
+      1.01..0202      14   6.5  "Top Gear" (1978) {(#45.34)}
+      10.1.10201      16   6.4  "Top Gear" (1978) {(#45.35)}
+      ...2...312       8   7.6  "Top Gear" (1978) {(#45.36)}
+      2......222       8   7.0  "Top Gear" (1978) {(#45.4)}
+      1......133       6   7.8  "Top Gear" (1978) {(#5.4)}
+      2......222       8   7.0  "Top Gear" (1978) {(#7.4)}
+      1......313       6   7.7  "Top Gear" (1978) {21 Years of Top Gear (#42.14)}
+      1..10.02.3      13   6.6  "Top Gear" (1978) {Top Gear Awards 2001 (#45.37)}
+      1......115       6   8.0  "Top Gear" (1978) {Top Gear Live (#37.20)}
+      .......4.5       7   9.1  "Top Gear" (1978) {Value Special (#45.22)}
+      0000000124   83872   8.8  "Top Gear" (2002)
+      00.0012202     152   7.4  "Top Gear" (2002) {(#1.1)}
+      00.0012211     105   7.5  "Top Gear" (2002) {(#1.10)}
+      00.0012101     125   7.3  "Top Gear" (2002) {(#1.2)}
+      00.0012201     114   7.4  "Top Gear" (2002) {(#1.3)}
+      0000012101     110   7.3  "Top Gear" (2002) {(#1.4)}
+      0000012201     104   7.5  "Top Gear" (2002) {(#1.5)}
+      0000012201     109   7.4  "Top Gear" (2002) {(#1.6)}
+      00.0012101     103   7.3  "Top Gear" (2002) {(#1.7)}
+      00.0012102     111   7.4  "Top Gear" (2002) {(#1.8)}
+      0000012201     102   7.5  "Top Gear" (2002) {(#1.9)}
+      00..001222     110   8.3  "Top Gear" (2002) {(#10.1)}
+      00..000024     127   8.7  "Top Gear" (2002) {(#10.10)}
+      00..000124     133   8.8  "Top Gear" (2002) {(#10.2)}
+      000.000123     112   8.6  "Top Gear" (2002) {(#10.3)}
+      000.001133     110   8.5  "Top Gear" (2002) {(#10.5)}
+      00.0001312      98   7.9  "Top Gear" (2002) {(#10.6)}
+      00..000133     111   8.6  "Top Gear" (2002) {(#10.7)}
+      000.000222     102   8.3  "Top Gear" (2002) {(#10.8)}
+      00..000124     117   8.8  "Top Gear" (2002) {(#10.9)}
+      00..000123     115   8.6  "Top Gear" (2002) {(#11.1)}
+      00..001312      99   7.9  "Top Gear" (2002) {(#11.2)}
+      000.001223     100   8.5  "Top Gear" (2002) {(#11.3)}
+      00..000123     126   8.7  "Top Gear" (2002) {(#11.4)}
+      0000000222     104   8.3  "Top Gear" (2002) {(#11.5)}
+      00..000123     119   8.7  "Top Gear" (2002) {(#11.6)}
+      00..001122     108   8.6  "Top Gear" (2002) {(#12.1)}
+      00..000133     113   8.7  "Top Gear" (2002) {(#12.2)}
+      000.000222     102   8.5  "Top Gear" (2002) {(#12.3)}
+      00..000124     116   8.9  "Top Gear" (2002) {(#12.4)}
+      00.0001312      97   7.9  "Top Gear" (2002) {(#12.5)}
+      00.0000224     106   8.6  "Top Gear" (2002) {(#12.6)}
+      00..000222      98   8.1  "Top Gear" (2002) {(#12.7)}
+      00.0000025     156   9.1  "Top Gear" (2002) {(#13.1)}
+      00..001124     126   8.8  "Top Gear" (2002) {(#13.2)}
+      00.0001123     120   8.7  "Top Gear" (2002) {(#13.3)}
+      00..001222     106   8.4  "Top Gear" (2002) {(#13.4)}
+      00..000224     114   8.8  "Top Gear" (2002) {(#13.5)}
+      00..000123     113   8.8  "Top Gear" (2002) {(#13.6)}
+      00..000124     114   8.9  "Top Gear" (2002) {(#13.7)}
+      00.0001124     156   8.8  "Top Gear" (2002) {(#14.1)}
+      0000000213     126   8.6  "Top Gear" (2002) {(#14.2)}
+      00.0001223     120   8.4  "Top Gear" (2002) {(#14.3)}
+      0000001123     120   8.4  "Top Gear" (2002) {(#14.4)}
+      00..001222     115   8.2  "Top Gear" (2002) {(#14.5)}
+      000.000223     114   8.5  "Top Gear" (2002) {(#14.7)}
+      00..000124     151   8.9  "Top Gear" (2002) {(#15.1)}
+      00.0000223     122   8.4  "Top Gear" (2002) {(#15.2)}
+      00..001222     114   8.4  "Top Gear" (2002) {(#15.3)}
+      000.000125     170   9.2  "Top Gear" (2002) {(#15.4)}
+      00.0000016     181   9.1  "Top Gear" (2002) {(#15.5)}
+      00..000124     129   8.8  "Top Gear" (2002) {(#15.6)}
+      0...001124      82   8.3  "Top Gear" (2002) {(#15.7)}
+      00..000114      78   8.2  "Top Gear" (2002) {(#15.8)}
+      00..001123     113   8.7  "Top Gear" (2002) {(#15.9)}
+      00.0001213     127   8.3  "Top Gear" (2002) {(#16.2)}
+      0000000024     131   8.8  "Top Gear" (2002) {(#16.3)}
+      00.0001222     107   8.2  "Top Gear" (2002) {(#16.4)}
+      00.0001123     130   8.5  "Top Gear" (2002) {(#16.5)}
+      00..001122     120   8.4  "Top Gear" (2002) {(#16.6)}
+      00..001213      69   8.0  "Top Gear" (2002) {(#16.7)}
+      00..001113      74   8.1  "Top Gear" (2002) {(#16.8)}
+      00..001223     155   8.5  "Top Gear" (2002) {(#17.1)}
+      00.0001123     142   8.6  "Top Gear" (2002) {(#17.2)}
+      00..001123     133   8.6  "Top Gear" (2002) {(#17.3)}
+      00..000115     160   9.0  "Top Gear" (2002) {(#17.4)}
+      00.0001212     128   8.3  "Top Gear" (2002) {(#17.5)}
+      00..001212     114   8.1  "Top Gear" (2002) {(#17.6)}
+      0000001123     205   8.6  "Top Gear" (2002) {(#18.1)}
+      00..001223     143   8.5  "Top Gear" (2002) {(#18.2)}
+      000.001223     151   8.4  "Top Gear" (2002) {(#18.3)}
+      00.0000222     136   8.4  "Top Gear" (2002) {(#18.4)}
+      000.001212     134   8.1  "Top Gear" (2002) {(#18.5)}
+      00.0001222     129   8.1  "Top Gear" (2002) {(#18.6)}
+      00..000124     150   8.8  "Top Gear" (2002) {(#18.7)}
+      00..000214     216   8.7  "Top Gear" (2002) {(#19.1)}
+      00..000123     186   8.7  "Top Gear" (2002) {(#19.2)}
+      00..001223     183   8.4  "Top Gear" (2002) {(#19.3)}
+      0000001223     178   8.4  "Top Gear" (2002) {(#19.4)}
+      000.000223     158   8.6  "Top Gear" (2002) {(#19.5)}
+      00.0001212     121   7.9  "Top Gear" (2002) {(#2.1)}
+      00.0001312      94   7.8  "Top Gear" (2002) {(#2.10)}
+      00.0002202     105   7.8  "Top Gear" (2002) {(#2.2)}
+      00.0001212     104   7.8  "Top Gear" (2002) {(#2.3)}
+      00.0002212      98   7.6  "Top Gear" (2002) {(#2.4)}
+      00.0001212      99   7.6  "Top Gear" (2002) {(#2.5)}
+      00.0001212      95   7.8  "Top Gear" (2002) {(#2.6)}
+      00.0000312      97   7.9  "Top Gear" (2002) {(#2.7)}
+      00.0001212      95   7.8  "Top Gear" (2002) {(#2.8)}
+      00.0001212     100   8.0  "Top Gear" (2002) {(#2.9)}
+      00..001123     206   8.5  "Top Gear" (2002) {(#20.1)}
+      00..001133     163   8.6  "Top Gear" (2002) {(#20.2)}
+      00...01124     186   8.9  "Top Gear" (2002) {(#20.3)}
+      00..000134     170   8.7  "Top Gear" (2002) {(#20.4)}
+      00..000124     171   8.9  "Top Gear" (2002) {(#20.5)}
+      0000000124     185   8.5  "Top Gear" (2002) {(#20.6)}
+      0000001213     304   8.0  "Top Gear" (2002) {(#21.1)}
+      00.0001223     247   8.5  "Top Gear" (2002) {(#21.2)}
+      000.001223     215   8.4  "Top Gear" (2002) {(#21.3)}
+      00.0.00223     171   8.5  "Top Gear" (2002) {(#21.4)}
+      000.000124     204   8.8  "Top Gear" (2002) {(#21.5)}
+      0000000124     301   8.8  "Top Gear" (2002) {(#22.1)}
+      000..00223     223   8.7  "Top Gear" (2002) {(#22.2)}
+      0000001124     280   8.7  "Top Gear" (2002) {(#22.3)}
+      00.0001223     207   8.4  "Top Gear" (2002) {(#22.4)}
+      000.001123     219   8.5  "Top Gear" (2002) {(#22.5)}
+      00...01124     222   8.8  "Top Gear" (2002) {(#22.6)}
+      00.0000214     194   8.6  "Top Gear" (2002) {(#22.7)}
+      0000.00007     539   9.5  "Top Gear" (2002) {(#22.8)}
+      6100000000    2658   2.2  "Top Gear" (2002) {(#23.1)}
+      6000000000     912   2.5  "Top Gear" (2002) {(#23.2)}
+      6000000000     751   2.7  "Top Gear" (2002) {(#23.3)}
+      6000000000     584   2.4  "Top Gear" (2002) {(#23.4)}
+      6000000000     449   2.4  "Top Gear" (2002) {(#23.5)}
+      7000000000     414   2.1  "Top Gear" (2002) {(#23.6)}
+	  
+	  ------------------------------------------------------------------------------
+
+REPORT FORMAT
+=============
+
+     In this list, movies have been rated on a scale of 1 to 10, 10 being
+good and 1 being bad.  For each movie, the total number of votes, the
+average rating, and the vote distribution are shown.  New movies are indicated
+by a "*" before their entry.
+
+     The vote distribution uses a single character to represent the percentage
+of votes for each ranking.  The following characters codes can appear:
+
+     "." no votes cast        "3" 30-39% of the votes  "7" 70-79% of the votes
+     "0"  1-9%  of the votes  "4" 40-49% of the votes  "8" 80-89% of the votes
+     "1" 10-19% of the votes  "5" 50-59% of the votes  "9" 90-99% of the votes
+     "2" 20-29% of the votes  "6" 60-69% of the votes  "*" 100%   of the votes
+
+
+HOW TO VOTE
+===========
+
+     To have your votes tallied in the list, send mail to
+vote@imdb.com.  In your mail, any line beginning with the word 
+"vote" will be considered as a vote.  All other lines ARE IGNORED.  No human
+will see your mail.  Votes must be of the form
+
+	vote <rating> <title>
+
+where <rating> is an integer between 1 and 10, and <title> is everything on the
+line after the <rating>.  Case is not considered in movie titles.  Valid votes
+might be
+
+	vote 8 Annie Hall (1977)
+	vote 1 santa claus conquers the martians (1964)
+
+To make things easy, the reply-to field of this posting is set to the
+vote tabulator.  Simply hit "r" to send in your votes.
+
+The movie mail-server can now provide a number of ballots to help you get
+started in voting. For more details send an e-mail message with the subject:
+
+   HELP BALOT
+
+to <mail-server@imdb.com> (NOTE: this address is different from the vote
+tabulator address). There are currently three ballots available via the 
+server: the currently weekly ballot as posted to rec.arts.movies.lists+surveys
+(use subject "BALOT WEEKLY"), one containing all the movies with 100+ votes 
+(use subject "BALOT POPULAR"), and one based on the must-see movies list posted
+to the group earlier this year (use subject "BALOT MUST-SEE"). Finally note 
+the commands all use the word BALOT rather than BALLOT owing to a limitation
+in the mail-server software.
+
+
+GENERAL INFORMATION
+===================
+
+This report is available via anonymous FTP from ftp.imdb.com and other sites
+as listed at http://www.imdb.com/interfaces
+
+For more information on the IMDb please see http://www.imdb.com/FAQ
+
+-----------------------------------------------------------------------------
+
+COPYING POLICY
+==============
+
+This file is copyright (c) 1993-2005 by The Internet Movie Database Ltd. All
+rights reserved.
+
+Disclaimer
+----------
+
+    This is a  database  of  movie  related  information  compiled  by
+    Internet  Movie  Database  Ltd (IMDb). While every effort has been
+    made to  ensure  the  accuracy  of  the  database  IMDb  gives  no
+    warranty  as  to  the accuracy of the information contained in the
+    database.  IMDb  reserves  the  right  to   withdraw   or   delete
+    information at any time.
+
+    This service is provided for the information of users only. It  is
+    not   provided  with  the  intention  that  users  rely  upon  the
+    information for any purposes. Accordingly,  IMDb  shall  under  no
+    circumstances  be liable for any loss or damage, including but not
+    limited to loss of profits, goodwill or indirect or  consequential
+    loss   arising   out   of  any  use  of  or  inaccuracies  in  the
+    information. All warranties express or  implied  are  excluded  to
+    the fullest extent permissible by law.
+
+    All information in this file  is  Copyright  2005  Internet  Movie
+    Database  Limited.  Reproduction,  distribution or transmission by
+    any means without the prior permission of IMDb is prohibited.  All
+    rights reserved.
+
+    For further information contact <licensing@imdb.com>
+
+         -------------------------------------------------------
+
+    All data and software released by Internet Movie Database  Ltd  is
+    freely  available  to  anyone  within certain limitations. You are
+    encouraged to quote subsets of the database  in  USENET  articles,
+    movie  related  FAQs,  magazine  articles etc. We do ask, however,
+    that you make reference to the source of the data  and  provide  a
+    pointer to the database for the benefit of the reader.
+
+    Permission is granted  by  the  copyright  holder  to  allow  free
+    distribution  of  this  file  and  any  other part of the Internet
+    Movie  Database  in  an  ELECTRONIC  FORM  ONLY,   providing   the
+    following conditions are met:
+
+         1. NO FEE OF ANY KIND, however indirect, will be  charged
+            for  its  distribution.  If  this file is being stored
+            for  later  distribution  to  anyone   that   can   be
+            construed   as   a   customer   of  yourself  or  your
+            organisation YOU MUST contact Internet Movie  Database
+            Ltd for permission.
+
+         2. Each  of  the  database  files  may   be   distributed
+            individually  but  only  in an unaltered form. All the
+            header and trailer information, including this  notice
+            and  the  details  on how to access the database, must
+            remain intact.
+
+         3. Specifically the files may NOT be  used  to  construct
+            any  kind  of  on-line database (except for individual
+            personal use). Clearance for  ALL  such  on-line  data
+            resources   must  be  requested  from  Internet  Movie
+            Database Ltd
+
+         4. In addition, copies of  the  Internet  Movie  Database
+            frequently  asked  questions  list and additions guide
+            must be made available in the same area / by the  same
+            method as the other database files.
+
+         5. CD-ROM  distribution  is  prohibited  without  written
+            permission from the Internet Movie Database Ltd
+
+    Distribution by e-mail, BBS and  Internet  systems  is  positively
+    encouraged within these limitations.
+
+    The files and software which make up the  movie  database  may  be
+    uploaded  to  commercial  BBS  systems  providing  that  the above
+    conditions are met and no *additional* fees are applied above  the
+    standard connect time or downloading charges.
+
+    For further information contact <licensing@imdb.com>
