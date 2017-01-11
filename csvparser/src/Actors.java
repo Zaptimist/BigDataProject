@@ -16,64 +16,67 @@ public class Actors extends Command {
         BufferedReader br = new BufferedReader(ipsr);
         String line;
         String actorName = "";
-        boolean hasFoundRegex = true;
+        boolean hasFoundRegex = false;
         while((line = br.readLine()) != null){
             if(hasFoundRegex)
             {
                 if(findSummary(line,endRegex))
                     break;
-                System.out.println(line);
                 if(line.length() > 0)
                 {
-                    //vind de index van het eerst voorkomende haakje en zet daar een comma voor
-                    int in = line.indexOf("(");
-                    if(in > -1)
-                    {
-                        StringBuffer sb =new StringBuffer(line);
-                        line = sb.insert(in,",").toString();
-                    }
-                    if(Character.isWhitespace(line.charAt(0)))
-                    {
-                        if(line.contains("\"")){
+                    if(Character.isWhitespace(line.charAt(0))){
+                        if(containsQuote(line))
                             line = "";
-                        }else{
-                            line = line.replaceFirst("\t",",");
-                            line = line.replaceAll("\t","");
+                        else{
+                            if(containsComma(line)){
+                                line = line.replaceAll(",","");
+                                System.out.println("found comma");
+                            }
+
+                            line = replaceTabsWithComma(line);
+                            line = insertComma(line);
+                            line = removeBrackets(line);
                             line = actorName + line;
                         }
-                    }else{
-                        actorName = line.split("\t",2)[0];
-                        actorName = actorName.replaceFirst(" ","");
-                        System.out.println(actorName);
-                        if(line.contains("\""))
+                    } else {
+                        String[] lines = line.split("\t",2);
+                        actorName = lines[0];
+                        actorName = removeSpaceAfterComma(actorName);
+                        if(!containsComma(actorName))
+                            actorName += ",";
+                        line = lines[1];
+                        if(containsQuote(line))
                             line = "";
-                        if(line.contains("(")){
-                            if(line.indexOf(",") > -1) {
-                                line = line.replaceFirst(" ", "");
-                                line = line.replaceAll("((?s)(\t).*?([^a-zA-Z0-9\\\\s]))", ",");
-                            }else{
-                                line = line.replaceFirst("\t",",");
-                                line = line.replaceAll("\t","");
+                        else{
+                            if(containsComma(line)){
+                                line = line.replaceAll(",","");
+                                System.out.println("found comma");
                             }
-                        } else {
-                            line = line.replaceAll("\t","");
+                            if(!line.startsWith("\t")){
+                                line = "," + line;
+                            }
+                            line = replaceTabsWithComma(line);
+                            line = insertComma(line);
+                            line = removeBrackets(line);
+                            line = actorName + line;
                         }
                     }
-                    line = line.replaceAll("(?:\\D(?=[^(]*\\))|\\)\\s*)","");
-                    line = line.trim().replaceAll("  +","");
-                    int ind = line.lastIndexOf(" ");
-                    if(ind >= 0){
-                        line = new StringBuilder(line).replace(ind,ind+1,"").toString();
+                    if(hasFoundRegex && line != ""){
+                        line = removeJunk(line);
+                        result += line + "\n";
                     }
-                    if(hasFoundRegex && line != "")
-                        result += line.replaceAll("((?s)(<|\\[|\").*?(>|\\]|\\}))","") + "\n";
                 }
             } else {
-                System.out.print("no regex");
+                //System.out.print("no regex");
                 hasFoundRegex = findSummary(line,regex);
             }
         }
         br.close();
         return result;
     }
+
+    String removeJunk(String line){
+        return line.replaceAll("((?s)(<|\\[).*?(>|\\]))","");
+    }
+
 }

@@ -9,7 +9,7 @@ public abstract class Command {
     public String regex;
     public String endRegex;
     public String resultName;
-    public String filePath = "C:\\Users\\Frank\\Desktop\\test1.txt";
+    public String filePath = "C:\\Users\\Frank\\Desktop\\10kactorslist.txt";
 
 
 
@@ -22,6 +22,11 @@ public abstract class Command {
     boolean startsWithQuote(String line){
         return line.startsWith("\"");
     }
+    boolean containsQuote(String line) { return line.contains("\"");}
+
+    boolean containsComma(String line){
+        return line.contains(",");
+    }
 
     //methode om een comma op de index van het eerst gevonden haakje in een string te plaatsen
     String insertComma(String line){
@@ -31,11 +36,42 @@ public abstract class Command {
             StringBuffer sb = new StringBuffer(line);
             result = sb.insert(index,",").toString();
         }
-        if(index > 0 && result != ""){
-            StringBuffer sb = new StringBuffer(result);
-            result = sb.deleteCharAt(index-1).toString();
-        }
+        result = removeSpaceBeforeComma(result, index);
         return result;
+    }
+
+    String removeSpaceBeforeComma(String line, int index){
+        if(index > 0){
+            StringBuffer sb = new StringBuffer(line);
+            line = sb.deleteCharAt(index -1).toString();
+        }
+        return line;
+    }
+
+    String removeSpaceBeforeComma(String line){
+        int index = line.indexOf(",");
+        if(index > 0){
+            StringBuffer sb = new StringBuffer(line);
+            line = sb.deleteCharAt(index -1).toString();
+        }
+        return line;
+    }
+
+    String removeSpaceAfterComma(String line, int index){
+        if(index > -1){
+            StringBuffer sb = new StringBuffer(line);
+            line = sb.deleteCharAt(index + 1).toString();
+        }
+        return line;
+    }
+
+    String removeSpaceAfterComma(String line){
+        int index = line.indexOf(",");
+        if(index > -1){
+            StringBuffer sb = new StringBuffer(line);
+            line = sb.deleteCharAt(index + 1).toString();
+        }
+        return line;
     }
 
 
