@@ -19,6 +19,7 @@ public class Countries extends Command {
             if(hasFoundRegex){
                 if(line.length() > 0){
                     if(!startsWithQuote(line)){
+                        line = removeSpaceAfterBracket(line);
                         line = insertComma(line);
                         line = removeBrackets(line);
                         line = replaceTabsWithComma(line);
@@ -33,4 +34,5 @@ public class Countries extends Command {
 
         return result;
     }
+
 }
