@@ -28,10 +28,11 @@ public class Gui extends javax.swing.JFrame
         jLabel3 = new javax.swing.JLabel();
         actorsButton = new javax.swing.JRadioButton();
         actressButton = new javax.swing.JRadioButton();
+        ratingButton = new javax.swing.JRadioButton();
+        businessbutton = new javax.swing.JRadioButton();
         countryButton = new javax.swing.JRadioButton();
-        businessButton = new javax.swing.JRadioButton();
-        bioButton = new javax.swing.JRadioButton();
         durationButton = new javax.swing.JRadioButton();
+        bioButton = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Parser");
@@ -99,21 +100,29 @@ public class Gui extends javax.swing.JFrame
 
         buttonGroup1.add(actorsButton);
         actorsButton.setText("Actors");
+        actorsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actorsButtonActionPerformed(evt);
+            }
+        });
 
         buttonGroup1.add(actressButton);
         actressButton.setText("Actress");
 
+        buttonGroup1.add(ratingButton);
+        ratingButton.setText("Movie Rating");
+
+        buttonGroup1.add(businessbutton);
+        businessbutton.setText("Business");
+
         buttonGroup1.add(countryButton);
         countryButton.setText("Countries");
 
-        buttonGroup1.add(businessButton);
-        businessButton.setText("Business");
+        buttonGroup1.add(durationButton);
+        durationButton.setText("Running Times");
 
         buttonGroup1.add(bioButton);
         bioButton.setText("Biography");
-
-        buttonGroup1.add(durationButton);
-        durationButton.setText("Running Times");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -123,34 +132,38 @@ public class Gui extends javax.swing.JFrame
                         .addComponent(startButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                                .addGap(18, 18, 18)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                        .addComponent(outputField, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
-                                                        .addComponent(inputField))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(outputBrowseButton)
-                                                        .addComponent(inputBrowseButton)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(layout.createSequentialGroup()
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addComponent(actorsButton)
-                                                        .addComponent(businessButton))
-                                                .addGap(104, 104, 104)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                        .addGroup(layout.createSequentialGroup()
-                                                                .addComponent(bioButton)
-                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
-                                                                .addComponent(durationButton))
+                                                        .addComponent(businessbutton)
+                                                        .addComponent(bioButton))
+                                                .addGap(79, 79, 79)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addGroup(layout.createSequentialGroup()
                                                                 .addComponent(actressButton)
-                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                                .addComponent(countryButton)))))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 140, Short.MAX_VALUE)
+                                                                .addComponent(ratingButton))
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                        .addComponent(durationButton)
+                                                                        .addComponent(countryButton))
+                                                                .addGap(0, 0, Short.MAX_VALUE))))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                .addGap(18, 18, 18)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                                .addComponent(inputField, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                                .addComponent(inputBrowseButton))
+                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                                .addComponent(outputField, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                                .addComponent(outputBrowseButton)))))
+                                .addGap(27, 27, 27))
         );
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -161,13 +174,16 @@ public class Gui extends javax.swing.JFrame
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(actorsButton)
                                         .addComponent(actressButton)
-                                        .addComponent(countryButton))
-                                .addGap(18, 18, 18)
+                                        .addComponent(ratingButton))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(businessButton)
-                                        .addComponent(bioButton)
-                                        .addComponent(durationButton))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 162, Short.MAX_VALUE)
+                                        .addComponent(countryButton)
+                                        .addComponent(businessbutton))
+                                .addGap(11, 11, 11)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(durationButton)
+                                        .addComponent(bioButton))
+                                .addGap(52, 52, 52)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(inputField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(inputBrowseButton)
@@ -180,6 +196,8 @@ public class Gui extends javax.swing.JFrame
                                 .addGap(18, 18, 18)
                                 .addComponent(startButton))
         );
+
+        actorsButton.getAccessibleContext().setAccessibleName("Actors");
 
         pack();
     }// </editor-fold>
@@ -226,15 +244,15 @@ public class Gui extends javax.swing.JFrame
                 filetype = 1;
             else if(bioButton.isSelected())
                 filetype = 2;
-            else if(businessButton.isSelected())
+            else if(businessbutton.isSelected())
                 filetype = 3;
             else if(countryButton.isSelected())
                 filetype = 4;
             else if(durationButton.isSelected())
                 filetype = 5;
+            else if(ratingButton.isSelected())
+                filetype = 6;
             hasStarted = !inputField.getText().equals("");
-
-
         }
 
     }
@@ -267,6 +285,10 @@ public class Gui extends javax.swing.JFrame
 
     }
 
+    private void actorsButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        // TODO add your handling code here:
+    }
+
 
     public static void main(String args[])
     {
@@ -283,7 +305,7 @@ public class Gui extends javax.swing.JFrame
     private javax.swing.JRadioButton actorsButton;
     private javax.swing.JRadioButton actressButton;
     private javax.swing.JRadioButton bioButton;
-    private javax.swing.JRadioButton businessButton;
+    private javax.swing.JRadioButton businessbutton;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JRadioButton countryButton;
     private javax.swing.JRadioButton durationButton;
@@ -294,6 +316,7 @@ public class Gui extends javax.swing.JFrame
     private javax.swing.JLabel jLabel3;
     private javax.swing.JButton outputBrowseButton;
     private javax.swing.JTextField outputField;
+    private javax.swing.JRadioButton ratingButton;
     private javax.swing.JButton startButton;
     // End of variables declaration                   
 }

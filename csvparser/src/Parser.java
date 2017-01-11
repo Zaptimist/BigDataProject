@@ -32,8 +32,10 @@ public class Parser {
                     fileData = p.doActors(p.filePath);
                     break;
                 case 1:
+                    fileData = p.doActress(p.filePath);
                     break;
                 case 2:
+                    fileData = p.doAge(p.filePath);
                     break;
                 case 3:
                     fileData = p.doBusiness(p.filePath);
@@ -42,6 +44,10 @@ public class Parser {
                     fileData = p.doCountries(p.filePath);
                     break;
                 case 5:
+                    fileData = p.doMovieDuration(p.filePath);
+                    break;
+                case 6:
+                    fileData = p.doRating(p.filePath);
                     break;
             }
             if(fileData != ""){
@@ -74,6 +80,30 @@ public class Parser {
         Business b = new Business();
         this.resultName = b.resultName;
         return b.readFile(new File(filePath));
+    }
+
+    String doAge(String filePath) throws IOException{
+        ActorsAge a = new ActorsAge();
+        this.resultName = a.resultName;
+        return a.readFile(new File(filePath));
+    }
+
+    String doMovieDuration(String filePath) throws IOException{
+        MovieDuration m = new MovieDuration();
+        this.resultName = m.resultName;
+        return m.readFile(new File(filePath));
+    }
+
+    String doRating(String filePath) throws IOException{
+        MovieRating r = new MovieRating();
+        this.resultName = r.resultName;
+        return r.readFile(new File(filePath));
+    }
+
+    String doActress(String filePath) throws IOException{
+        Actress a = new Actress();
+        this.resultName = a.resultName;
+        return a.readFile(new File(filePath));
     }
 
     void writeFile(String data,String path) throws IOException{

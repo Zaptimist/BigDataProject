@@ -74,6 +74,25 @@ public abstract class Command {
         return line;
     }
 
+    /**
+     * Author Sietse
+     * removes all comma's
+     * @param line
+     * @return a string without comma's
+     */
+    String removeComma (String line){
+        return line.replaceAll(",", "");
+    }
+
+    /**
+     * Author Sietse
+     * @param line
+     * @return a string where 2 spaces are replaced wit 1 comma
+     */
+    String replaceTwoSpaceWithComma (String line){
+        return line.replaceAll("\\s{2,}", ",");
+    }
+
 
     String removeSpaceAfterBracket(String line){
         int index = line.indexOf(")");
