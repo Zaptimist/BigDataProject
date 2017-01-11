@@ -43,6 +43,7 @@ public class Parser {
             //System.out.println(line);
             result += line + "\n";
         }
+        result = result.split("-{77}")[0];
         br.close();
         return result;
     }
@@ -65,7 +66,7 @@ public class Parser {
        // regex code Ruud remove all lines with: " (series)
         //return data.replaceAll("(?m)\".*\r?\n|\t", "");
         //\-{4}\t{3}\-{6}(.*?)\-{76}
-        return data.replaceAll("-{4}\t{3}-{6}", "");
+        return data.replaceAll("-{77}", "");
     }
 
     static void writeFile(String data) throws IOException{
