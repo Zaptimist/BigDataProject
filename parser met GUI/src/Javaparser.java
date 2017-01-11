@@ -25,8 +25,6 @@ public class Javaparser
               
           }
         }
-        
-        System.out.println("abc");
         String fileData = "";
         try
         {

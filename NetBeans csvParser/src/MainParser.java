@@ -26,6 +26,10 @@ public class MainParser {
                     break;
                 case 3:
                     fileData = p.doActorsAge();
+                    break;
+                case 4:
+                    fileData = p.doMovieDuration();
+                    break;
             }
             if(fileData != ""){
                 p.writeFile(fileData);
@@ -60,6 +64,12 @@ public class MainParser {
         ActorsAge aa = new ActorsAge();
         this.resultName = aa.resultName;
         return aa.readFile(new File(aa.filePath));
+    }
+
+    String doMovieDuration() throws IOException{
+    MovieDuration md = new MovieDuration();
+    this.resultName = md.resultName;
+    return md.readFile(new File(md.filePath));
     }
 
     void writeFile(String data) throws IOException{

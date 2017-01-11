@@ -6,10 +6,12 @@ import java.io.*;
 public class Countries extends Command {
     public String resultName = "Countries.csv";
     public String regex = "==============";
+    public String endRegex = "--------------------------------------------------------------------------------";
 
     @Override
     String readFile(File file) throws IOException {
         String result = "";
+        result += "Movie,Year,Country" + "\n";
         InputStream ips = new FileInputStream(file);
         InputStreamReader ipsr = new InputStreamReader(ips);
         BufferedReader br = new BufferedReader(ipsr);
@@ -17,6 +19,8 @@ public class Countries extends Command {
         boolean hasFoundRegex = false;
         while((line = br.readLine()) != null){
             if(hasFoundRegex){
+                if(findSummary(line, endRegex))
+                    break;
                 if(line.length() > 0){
                     if(!startsWithQuote(line)){
                         line = removeSpaceAfterBracket(line);
@@ -31,7 +35,6 @@ public class Countries extends Command {
             }
         }
         br.close();
-
         return result;
     }
 

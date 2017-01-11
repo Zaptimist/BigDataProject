@@ -19,7 +19,7 @@ public class MovieRating extends Command{
         boolean foundBegin = false;
         while((line = br.readLine()) != null)
         {
-            if(line.contains(end))
+            if(line.equals(end))
             {
                 line = "";
                 break;
@@ -28,11 +28,10 @@ public class MovieRating extends Command{
             {
                 if(line.equals(end))
                 {
+                    line = "";
                     break;
-                    
-                }
+                } 
                 
-               
                 if(line.contains("\""))
                 {
                     line = "";

@@ -10,8 +10,6 @@ public abstract class Command {
     public String resultName;
     public String filePath = "D:\\IMDB\\BiographyTest1.txt";
 
-
-
     abstract String readFile(File file) throws IOException;
 
     static boolean findSummary(String line, String regex){
@@ -63,5 +61,17 @@ public abstract class Command {
      */
     String replaceTwoSpaceWithComma (String line){
         return line.replaceAll("\\s{2,}", ",");
+    }
+    
+    String removeSpaceAfterBracket(String line){
+        int index = line.indexOf(")");
+        if(index > -1){
+            if(line.charAt(index + 1) == ' ')
+            {
+                StringBuffer sb = new StringBuffer(line);
+                line = sb.deleteCharAt(index + 1).toString();
+            }
+        }
+        return line;
     }
 }

@@ -3,11 +3,10 @@
  */
 import javax.swing.*;
 import java.io.*;
-import java.util.regex.*;
 public class Parser {
 
     //fileNr bepaald welk soort bestand we gaan parsen
-    public static int fileNr = 1;
+    public static int fileNr = 0;
     String resultName;
 
     public static void main(String[] args) {
@@ -28,7 +27,8 @@ public class Parser {
                 JOptionPane.showMessageDialog(null,"No data");
             }
         }catch(Exception e){
-            JOptionPane.showMessageDialog(null,e.getMessage());
+            JOptionPane.showMessageDialog(null,"we got an exception");
+            System.out.println();
         }
     }
 
