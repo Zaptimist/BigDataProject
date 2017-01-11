@@ -7,7 +7,7 @@ import java.io.*;
 public class MainParser {
 
     //fileNr bepaald welk soort bestand we gaan parsen
-    public static int fileNr = 2;
+    public static int fileNr = 3;
     String resultName;
 
     public static void main(String[] args) {
@@ -24,6 +24,8 @@ public class MainParser {
                 case 2:
                     fileData = p.doMovieRating();
                     break;
+                case 3:
+                    fileData = p.doActorsAge();
             }
             if(fileData != ""){
                 p.writeFile(fileData);
@@ -52,6 +54,12 @@ public class MainParser {
     MovieRating mr = new MovieRating();
     this.resultName = mr.resultName;
     return mr.readFile(new File(mr.filePath));
+    }
+    
+    String doActorsAge() throws IOException{
+        ActorsAge aa = new ActorsAge();
+        this.resultName = aa.resultName;
+        return aa.readFile(new File(aa.filePath));
     }
 
     void writeFile(String data) throws IOException{

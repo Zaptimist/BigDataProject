@@ -8,7 +8,7 @@ public abstract class Command {
     public String regex;
     public String endRegex;
     public String resultName;
-    public String filePath = "D:\\Google Drive\\Ruud\\Eigen bestanden\\SCHOOLCARIERRE\\OPLEIDING INFORMATICA\\jaar 2\\Periode 2\\BigDataProject\\sietse\\testmap\\ratingstest.list";
+    public String filePath = "D:\\IMDB\\BiographyTest1.txt";
 
 
 
