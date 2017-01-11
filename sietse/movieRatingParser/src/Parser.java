@@ -49,16 +49,21 @@ public class Parser
                     
                 }
                 
+               
                 if(line.contains("\""))
                 {
                     line = "";
                 }
+                
+                
                 else
                 {
-                   line = line.replaceAll("\t","");
-                   line = line.replaceAll("  ", "");
+                   line = line.trim();
+                   line = line.replaceAll(",", "");
+                   line = line.replaceAll("\\s{2,}", ",");
+                                     
                 }
-                result += line.replaceAll(" ", ",") + "\n"; 
+                result += line.replaceAll("^...........", "") + "\n"; 
             }
            else 
            {
