@@ -7,7 +7,7 @@ import java.util.regex.*;
 public class Parser {
 
     //fileNr bepaald welk soort bestand we gaan parsen
-    public static int fileNr = 0;
+    public static int fileNr = 1;
     String resultName;
 
     public static void main(String[] args) {
@@ -17,6 +17,9 @@ public class Parser {
             switch(fileNr){
                 case 0:
                     fileData = p.doActors();
+                    break;
+                case 1:
+                    fileData = p.doCountries();
                     break;
             }
             if(fileData != ""){
@@ -34,6 +37,12 @@ public class Parser {
         Actors a = new Actors();
         this.resultName = a.resultName;
         return a.readFile(new File(a.filePath));
+    }
+
+    String doCountries() throws IOException{
+        Countries c = new Countries();
+        this.resultName = c.resultName;
+        return c.readFile(new File(c.filePath));
     }
 
     void writeFile(String data) throws IOException{
