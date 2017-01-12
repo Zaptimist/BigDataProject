@@ -13,22 +13,27 @@ public class MovieRating extends Command{
         InputStreamReader ipsr = new InputStreamReader(ips);
         BufferedReader br = new BufferedReader(ipsr);
         String line;
-
         String begin = "New  Distribution  Votes  Rank  Title";
+        String textInMid1 = "BOTTOM 10 MOVIES (1500+ VOTES)";
+        String textInMid2 = "New  Distribution  Votes  Rank  Title";
+        String textInMid3 = "MOVIE RATINGS REPORT";
         String end = "------------------------------------------------------------------------------";
         boolean foundBegin = false;
         while((line = br.readLine()) != null)
         {
             if(line.equals(end))
             {
-                line = "";
                 break;
             }
             if(foundBegin)
             {
-                if(line.equals(end))
+                if (line.equals(textInMid1) || line.equals(textInMid2) || line.equals(textInMid3))
                 {
                     line = "";
+
+                }
+                if(line.equals(end))
+                {
                     break;
                 }
 
@@ -45,7 +50,10 @@ public class MovieRating extends Command{
                     line = insertComma(line);
                     line = removeBrackets(line);
                 }
-                result += line.replaceAll("^...........", "") + "\n";
+                if (line != "" )
+                {
+                    result += line.replaceAll("^...........", "") + "\n";
+                }
             }
             else
             {

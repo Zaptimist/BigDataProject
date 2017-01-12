@@ -8,7 +8,7 @@ public class ActorsAge extends Command{
     public String resultName = "ActorsAge.csv";
     String readFile(File file) throws IOException {
         String result = "";
-        result += "Firstname,Surname,Date Of Birth,Birthplace,Province,Country,dateOfDeath" + "\n";
+        result += "Surname,Firstname,Date Of Birth,dateOfDeath" + "\n";
         InputStream ips = new FileInputStream(file);
         InputStreamReader ipsr = new InputStreamReader(ips);
         BufferedReader br = new BufferedReader(ipsr);
@@ -46,9 +46,10 @@ public class ActorsAge extends Command{
                     }
 
                     db = line.replaceAll("DB:","");
+                    db = db.split(",",2)[0];
                 }
 
-                if (line.contains("NM:"))
+                if (line.contains("NM:") && line.contains(","))
                 {
                     if(nm != "" && db != "")
                     {
@@ -62,7 +63,7 @@ public class ActorsAge extends Command{
                 }
                 if (line.contains("DD"))
                 {
-                    dd = line.replaceAll(",.*$|DD|(?:\\D(?=[^(]*\\))|\\))", "");
+                    dd = line.replaceAll(",.*$|DD:|(?:\\D(?=[^(]*\\))|\\))", "");
                 }
 
                 if(line.contains(end))

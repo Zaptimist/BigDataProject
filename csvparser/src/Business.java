@@ -21,13 +21,13 @@ public class Business extends Command {
 
     String readFile(File file) throws IOException {
 
-        String result = "";
+        String result = "Movie,Year,Currency,Gains\n";
         InputStream ips = new FileInputStream(file);
         InputStreamReader ipsr = new InputStreamReader(ips);
         BufferedReader br = new BufferedReader(ipsr);
         String line;
         boolean hasFoundRegex = false;
-        boolean addBegin = true;
+        boolean serieCheck = false;
 
         //Strings
         String mv = "";
@@ -40,39 +40,42 @@ public class Business extends Command {
                     break;
                 if(line.length() > 0)
                 {
-                    if (addBegin) {
-                        result = "Movie,Year,Currency,Gains\n";
-                        addBegin = !addBegin;
-                    }
-
-                    line = line.replaceFirst("\\(",",");
+                    line = line.replaceAll("\\s\\(",",(").replaceAll("\\)(.*)",")");
 
                     if (line.startsWith("MV: ")) {
-                        mv = line.replaceAll("MV: ", "") + ",";
+                        if (line.contains("\"")) {
+                            mv = "";
+                            serieCheck = true;
+                        }
+                        else
+                            mv = line.replaceAll("MV: ", "") + ",";
                     }
 
-                    if (line.startsWith("BT:")) {
-                        bt = line.replaceAll("BT: ", "").replaceAll("[,]", "").replaceAll(" ", ",");
+                    if (serieCheck && line.startsWith("BT:")) {
+                        bt = "";
+                        serieCheck = !serieCheck;
+                    }
 
+                    else{
+                        if (line.startsWith("BT:")) {
+                            bt = line.replaceAll("BT: ", "").replaceAll(",", "").replaceAll(" ", ",");
+                        }
                     }
 
                     if(hasFoundRegex){
-
                         if (mv != ""&& bt != "")
                         {
-
-                            mv = mv.replaceAll("[)]|[(]", "").replaceAll("[\\s][,]", ",");
+                            //Removes the ( and ) and all non digits
+                            mv = mv.replaceAll("(?:\\D(?=[^(]*\\))|\\)\\s*)","");
+                            //Removes all the spaces in the price
                             bt = bt.replaceAll("[\\s{5}]*[,]$", "");
                             result += mv + bt + "\n";
                             mv = "";
                             bt = "";
                         }
-
                     }
-
                 }
             }
-
             else {
                 System.out.print("no regex");
                 hasFoundRegex = findSummary(line,regex);

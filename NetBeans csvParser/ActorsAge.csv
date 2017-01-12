@@ -1,21 +1,22 @@
-Surname,Firstname,Date Of Birth,dateOfDeath
-'El Burro' Van Rankin, Jorge,5 June 1964, NULL
-'El Francés', José,1971, NULL
-'K', Murray the,14 February 1922,21 February 1982
-'La Veneno', Cristina,19 March 1964, NULL
-'t Hart, Maarten,25 November 1944, NULL
-'t Hoen, Frans,29 August 1920,23 October 1967
-'t Hooft, Gerard,5 July 1946, NULL
-'t Seyen, Hilda,1895,1984
-'Twinkie' Bird, Tracy,25 September 1966, NULL
--Alverio, Esteban Rodriguez,5 August 1992, NULL
-.Ponnappan, Jai Krishna,7 August 1985, NULL
-1, Todd,24 May 1970, NULL
-13, Wednesday,12 August 1976, NULL
-1975, The,12 September 1977, NULL
-2:50, Egashira,27 October 1981, NULL
-2X, Benjamin,14 July 1932,5 August 2005
-3 Whippets, The,31 January 1961,27 August 2003 
-3, Frank Ockenfels,29 September 1960, NULL
-38G, Samantha,27 March 1969, NULL
+Firstname,Surname,Date Of Birth,Birthplace,Province,Country,dateOfDeath
+'El Burro' Van Rankin, Jorge,5 June 1964, Mexico City, Distrito Federal, Mexico, NULL
+'El Francés', José,1971, Montpellier, Hérault, France, NULL
+'K', Murray the,14 February 1922, New York City, New York, USA,:21 February 1982
+'La Veneno', Cristina,19 March 1964, Almería, Andalucía, Spain, NULL
+'t Hart, Maarten,25 November 1944, Maassluis, Zuid-Holland, Netherlands, NULL
+'t Hoen, Frans,29 August 1920, The Hague, Zuid-Holland, Netherlands,:23 October 1967
+'t Hooft, Gerard,5 July 1946, Den Helder, Noord-Holland, Netherlands, NULL
+'t Seyen, Hilda,1895, Borgerhout, Flanders, Belgium,:1984
+'Twinkie' Bird, Tracy,25 September 1966, Brooklyn, New York, USA, NULL
+-Alverio, Esteban Rodriguez,5 August 1992, Santurce, Puerto Rico, NULL
+.Ponnappan, Jai Krishna,7 August 1985, Bangalore, India, NULL
+1, Todd,24 May 1970, Brooklyn, New York City, New York, USA, NULL
+13, Wednesday,12 August 1976, Lexington, North Carolina, USA, NULL
+2 Chainz,12 September 1977, College Park, Georgia, USA, NULL
+25 Cent (I),1997, Los Angeles, California, USA, NULL
+25 Cent (II),27 October 1981, Baltimore, Maryland, USA, NULL
+2X, Benjamin,14 July 1932, Suffolk, Virginia, USA,:5 August 2005
+3 Steps Ahead,31 January 1961, Berkel, Zuid-Holland, Netherlands,:27 August 2003 
+3, Frank Ockenfels,29 September 1960, Lockport, New York, USA, NULL
+38G, Samantha,27 March 1969, Texas, USA, NULL
 
