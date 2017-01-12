@@ -47,8 +47,26 @@ public abstract class Command {
         }
         return line;
     }
-	
+
+    String removeSpaceBeforeComma(String line){
+        int index = line.indexOf(",");
+        if(index > 0){
+            StringBuffer sb = new StringBuffer(line);
+            line = sb.deleteCharAt(index -1).toString();
+        }
+        return line;
+    }
+
     String removeSpaceAfterComma(String line, int index){
+        if(index > -1){
+            StringBuffer sb = new StringBuffer(line);
+            line = sb.deleteCharAt(index + 1).toString();
+        }
+        return line;
+    }
+
+    String removeSpaceAfterComma(String line){
+        int index = line.indexOf(",");
         if(index > -1){
             StringBuffer sb = new StringBuffer(line);
             line = sb.deleteCharAt(index + 1).toString();
