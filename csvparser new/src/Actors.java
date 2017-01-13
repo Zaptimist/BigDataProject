@@ -1,4 +1,8 @@
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Scanner;
 
 /**
  * Created by Frank on 10-1-2017.
@@ -8,16 +12,19 @@ public class Actors extends Command {
     public String endRegex = "-----------------------------------------------------------------------------";
     public String resultName = "Actors.csv";
 
-    String readFile(File file) throws IOException {
+    void readFile(File file,File resultFile) throws IOException {
         String result = "";
-        result += "Surname,Name,Movie,Year" + "\n";
-        InputStream ips = new FileInputStream(file);
-        InputStreamReader ipsr = new InputStreamReader(ips);
-        BufferedReader br = new BufferedReader(ipsr);
+        result = "Surname,Name,Movie,Year";
+        Scanner scanner = new Scanner(file,ENCODING.name());
         String line;
         String actorName = "";
+        Path p = Paths.get(resultFile.getAbsolutePath());
+        BufferedWriter writer = Files.newBufferedWriter(p,ENCODING);
+        writer.write(result);
+        writer.newLine();
         boolean hasFoundRegex = false;
-        while((line = br.readLine()) != null){
+        while(scanner.hasNextLine()){
+            line = scanner.nextLine();
             if(hasFoundRegex)
             {
                 if(findSummary(line,endRegex))
@@ -39,8 +46,10 @@ public class Actors extends Command {
                         }
                     } else {
                         String[] lines = line.split("\t",2);
-                        actorName = lines[0];
-                        actorName = removeSpaceAfterComma(actorName);
+                        if(lines.length > 0){
+                            actorName = lines[0];
+                            actorName = removeSpaceAfterComma(actorName);
+                        }
                         if(!containsComma(actorName))
                             actorName += ",";
                         line = lines[1];
@@ -61,7 +70,8 @@ public class Actors extends Command {
                     }
                     if(hasFoundRegex && line != ""){
                         line = removeJunk(line);
-                        result += line + "\n";
+                        writer.write(line);
+                        writer.newLine();
                     }
                 }
             } else {
@@ -69,8 +79,8 @@ public class Actors extends Command {
                 hasFoundRegex = findSummary(line,regex);
             }
         }
-        br.close();
-        return result;
+        scanner.close();
+        writer.close();
     }
 
     String removeJunk(String line){

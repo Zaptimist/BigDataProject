@@ -1,4 +1,8 @@
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Scanner;
 
 /**
  *
@@ -6,21 +10,26 @@ import java.io.*;
  */
 public class MovieRating extends Command{
     public String resultName = "MovieRating.csv";
-    String readFile(File file) throws IOException {
+
+    void readFile(File file, File resultFile) throws IOException {
         String result = "";
-        result += "Votes,Grade,MovieTitle,Year" + "\n";
-        InputStream ips = new FileInputStream(file);
-        InputStreamReader ipsr = new InputStreamReader(ips);
-        BufferedReader br = new BufferedReader(ipsr);
+        result = "Votes,Grade,MovieTitle,Year";
+        Scanner scanner = new Scanner(file,ENCODING.name());
         String line;
+        Path p = Paths.get(resultFile.getAbsolutePath());
+        BufferedWriter writer = Files.newBufferedWriter(p,ENCODING);
+        writer.write(result);
+        writer.newLine();
+
         String begin = "New  Distribution  Votes  Rank  Title";
         String textInMid1 = "BOTTOM 10 MOVIES (1500+ VOTES)";
         String textInMid2 = "New  Distribution  Votes  Rank  Title";
         String textInMid3 = "MOVIE RATINGS REPORT";
         String end = "------------------------------------------------------------------------------";
         boolean foundBegin = false;
-        while((line = br.readLine()) != null)
+        while(scanner.hasNextLine())
         {
+            line = scanner.nextLine();
             if(line.equals(end))
             {
                 break;
@@ -52,7 +61,8 @@ public class MovieRating extends Command{
                 }
                 if (line != "" )
                 {
-                    result += line.replaceAll("^...........", "") + "\n";
+                    writer.write(line.replaceAll("^...........", ""));
+                    writer.newLine();
                 }
             }
             else
@@ -60,8 +70,7 @@ public class MovieRating extends Command{
                 foundBegin = (line.equals(begin));
             }
         }
-        br.close();
-
-        return result;
+        scanner.close();
+        writer.close();
     }
 }

@@ -1,11 +1,13 @@
 import java.io.File;
 import java.io.IOException;
-
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 /**
  * Created by Frank on 10-1-2017.
  */
 public abstract class Command {
 
+    public Charset ENCODING = StandardCharsets.ISO_8859_1;
     public String regex;
     public String endRegex;
     public String resultName;
@@ -13,7 +15,7 @@ public abstract class Command {
 
 
 
-    abstract String readFile(File file) throws IOException;
+    abstract void readFile(File file,File resultFile) throws IOException;
 
     static boolean findSummary(String line, String regex){
         return line.equals(regex);
@@ -60,7 +62,8 @@ public abstract class Command {
     String removeSpaceAfterComma(String line, int index){
         if(index > -1){
             StringBuffer sb = new StringBuffer(line);
-            line = sb.deleteCharAt(index + 1).toString();
+            if(line.length() > index + 1)
+                line = sb.deleteCharAt(index + 1).toString();
         }
         return line;
     }
@@ -69,7 +72,8 @@ public abstract class Command {
         int index = line.indexOf(",");
         if(index > -1){
             StringBuffer sb = new StringBuffer(line);
-            line = sb.deleteCharAt(index + 1).toString();
+            if(line.length() > index + 1)
+                line = sb.deleteCharAt(index + 1).toString();
         }
         return line;
     }

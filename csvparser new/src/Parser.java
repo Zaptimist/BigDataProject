@@ -3,6 +3,11 @@
  */
 import javax.swing.*;
 import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 public class Parser {
 
     //fileNr bepaald welk soort bestand we gaan parsen
@@ -21,42 +26,47 @@ public class Parser {
                 p.wait(100);
             }catch(Exception e){}
         }
-
+        System.out.println("started");
         p.filePath = GUI.file;
         p.outPut = GUI.destination;
         p.fileNr = GUI.filetype;
+
+        File dir = new File(p.outPut);
+        //File resultFile = new File(dir,"test1");
+        //try {
+        //    resultFile.createNewFile();
+        //} catch (IOException e) {
+        //    e.printStackTrace();
+        //}
+
         String fileData = "";
         try{
             switch(p.fileNr){
                 case 0:
-                    fileData = p.doActors(p.filePath);
+                    p.doActors(p.filePath,p.outPut);
                     break;
                 case 1:
-                    fileData = p.doActress(p.filePath);
+                    p.doActress(p.filePath,p.outPut);
                     break;
                 case 2:
-                    fileData = p.doAge(p.filePath);
+                    p.doAge(p.filePath,p.outPut);
                     break;
                 case 3:
-                    fileData = p.doBusiness(p.filePath);
+                    p.doBusiness(p.filePath,p.outPut);
                     break;
                 case 4:
-                    fileData = p.doCountries(p.filePath);
+                    p.doCountries(p.filePath,p.outPut);
                     break;
                 case 5:
-                    fileData = p.doMovieDuration(p.filePath);
+                    p.doMovieDuration(p.outPut,p.outPut);
                     break;
                 case 6:
-                    fileData = p.doRating(p.filePath);
+                    p.doRating(p.filePath,p.outPut);
                     break;
-            }
-            if(fileData != ""){
-                p.writeFile(fileData,p.outPut);
-            }else{
-                JOptionPane.showMessageDialog(null,"No data");
             }
         }catch(Exception e){
             JOptionPane.showMessageDialog(null,"we got an exception");
+            e.printStackTrace();
             System.out.println();
         }
         JOptionPane.showMessageDialog(null,"Done, file saved to:"+ p.outPut);
@@ -64,58 +74,60 @@ public class Parser {
     }
 
 
-    String doActors(String filePath) throws IOException{
+    void doActors(String filePath,String outPut) throws IOException{
         Actors a = new Actors();
         this.resultName = a.resultName;
-        return a.readFile(new File(filePath));
+        File f = new File(outPut);
+        File resultFile = new File(f,a.resultName);
+        a.readFile(new File(filePath),resultFile);
     }
 
-    String doCountries(String filePath) throws IOException{
+    void doCountries(String filePath,String outPut) throws IOException{
         Countries c = new Countries();
         this.resultName = c.resultName;
-        return c.readFile(new File(filePath));
+        File f = new File(outPut);
+        File resultFile = new File(f,c.resultName);
+        c.readFile(new File(filePath),resultFile);
     }
 
-    String doBusiness(String filePath) throws IOException{
+    void doBusiness(String filePath, String outPut) throws IOException{
         Business b = new Business();
         this.resultName = b.resultName;
-        return b.readFile(new File(filePath));
+        File f = new File(outPut);
+        File resultFile = new File(f,b.resultName);
+        b.readFile(new File(filePath),resultFile);
     }
 
-    String doAge(String filePath) throws IOException{
+    void doAge(String filePath,String outPut) throws IOException{
         ActorsAge a = new ActorsAge();
         this.resultName = a.resultName;
-        return a.readFile(new File(filePath));
+        File f = new File(outPut);
+        File resultFile = new File(f,a.resultName);
+        a.readFile(new File(filePath),resultFile);
     }
 
-    String doMovieDuration(String filePath) throws IOException{
+    void doMovieDuration(String filePath,String outPut) throws IOException{
         MovieDuration m = new MovieDuration();
         this.resultName = m.resultName;
-        return m.readFile(new File(filePath));
+        File f = new File(outPut);
+        File resultFile = new File(f,m.resultName);
+        m.readFile(new File(filePath),resultFile);
     }
 
-    String doRating(String filePath) throws IOException{
+    void doRating(String filePath,String outPut) throws IOException{
         MovieRating r = new MovieRating();
         this.resultName = r.resultName;
-        return r.readFile(new File(filePath));
+        File f = new File(outPut);
+        File resultFile = new File(f,r.resultName);
+        r.readFile(new File(filePath),resultFile);
     }
 
-    String doActress(String filePath) throws IOException{
+    void doActress(String filePath, String outPut) throws IOException{
         Actress a = new Actress();
         this.resultName = a.resultName;
-        return a.readFile(new File(filePath));
-    }
-
-    void writeFile(String data,String path) throws IOException{
-        File dir = new File(path);
-        File resultFile = new File(dir,resultName);
-        resultFile.createNewFile();
-        FileWriter fw = new FileWriter(resultFile);
-        BufferedWriter bw = new BufferedWriter(fw);
-        PrintWriter fileOut = new PrintWriter(bw);
-        fileOut.println(data);
-        fileOut.close();
-        System.out.println("done");
+        File f = new File(outPut);
+        File resultFile = new File(f,a.resultName);
+        a.readFile(new File(filePath),resultFile);
     }
 
 }

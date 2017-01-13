@@ -1,4 +1,8 @@
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Scanner;
 
 /**
  *
@@ -7,22 +11,24 @@ import java.io.*;
 public class MovieDuration extends Command
 {
     public String resultName = "MovieDuration.csv";
-    String readFile(File file) throws IOException
+    void readFile(File file,File resultFile) throws IOException
     {
         String result = "";
-        //result += "Votes,Grade,MovieTitle,Year" + "\n";
-        InputStream ips = new FileInputStream(file);
-        InputStreamReader ipsr = new InputStreamReader(ips);
-        BufferedReader br = new BufferedReader(ipsr);
+        result = "Movie,Year,Duration";
+        Scanner scanner = new Scanner(file,ENCODING.name());
         String line;
+        Path p = Paths.get(resultFile.getAbsolutePath());
+        BufferedWriter writer = Files.newBufferedWriter(p,ENCODING);
+        writer.write(result);
+        writer.newLine();
         String begin = "==================";
         String end = "--------------------------------------------------------------------------------";
         boolean foundBegin = false;
-        while((line = br.readLine()) != null)
+        while(scanner.hasNextLine())
         {
+            line = scanner.nextLine();
             if(line.equals(end))
             {
-                line = "";
                 break;
             }
             if(foundBegin)
@@ -43,7 +49,8 @@ public class MovieDuration extends Command
                 }
                 if(line != "")
                 {
-                    result += line.replaceAll("\t","") + "\n";
+                    //result += line.replaceAll("\t","") + "\n";
+                    writer.write(line.replaceAll("\t",""));
                 }
 
             }
@@ -52,8 +59,7 @@ public class MovieDuration extends Command
                 foundBegin = (line.equals(begin));
             }
         }
-        br.close();
-
-        return result;
+        scanner.close();
+        writer.close();
     }
 }

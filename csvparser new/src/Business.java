@@ -10,8 +10,12 @@
  */
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Business extends Command {
     public String regex = "=============";
@@ -19,13 +23,14 @@ public class Business extends Command {
     public String resultName = "Business.csv";
 
 
-    String readFile(File file) throws IOException {
-
-        String result = "Movie,Year,Currency,Gains\n";
-        InputStream ips = new FileInputStream(file);
-        InputStreamReader ipsr = new InputStreamReader(ips);
-        BufferedReader br = new BufferedReader(ipsr);
+    void readFile(File file, File resultFile) throws IOException {
+        String result = "Movie,Year,Currency,Gains";
+        Scanner scanner = new Scanner(file,ENCODING.name());
         String line;
+        Path p = Paths.get(resultFile.getAbsolutePath());
+        BufferedWriter writer = Files.newBufferedWriter(p,ENCODING);
+        writer.write(result);
+        writer.newLine();
         boolean hasFoundRegex = false;
         boolean serieCheck = false;
 
@@ -33,7 +38,8 @@ public class Business extends Command {
         String mv = "";
         String bt = "";
 
-        while((line = br.readLine()) != null){
+        while(scanner.hasNextLine()){
+            line = scanner.nextLine();
             if(hasFoundRegex)
             {
                 if(findSummary(line,endRegex))
@@ -47,8 +53,11 @@ public class Business extends Command {
                             mv = "";
                             serieCheck = true;
                         }
-                        else
+                        else{
                             mv = line.replaceAll("MV: ", "") + ",";
+                            mv = removeComma(mv);
+                        }
+
                     }
 
                     if (serieCheck && line.startsWith("BT:")) {
@@ -69,7 +78,9 @@ public class Business extends Command {
                             mv = mv.replaceAll("(?:\\D(?=[^(]*\\))|\\)\\s*)","");
                             //Removes all the spaces in the price
                             bt = bt.replaceAll("[\\s{5}]*[,]$", "");
-                            result += mv + bt + "\n";
+                            result = mv + bt;
+                            writer.write(result);
+                            writer.newLine();
                             mv = "";
                             bt = "";
                         }
@@ -81,7 +92,7 @@ public class Business extends Command {
                 hasFoundRegex = findSummary(line,regex);
             }
         }
-        br.close();
-        return result;
+        scanner.close();
+        writer.close();
     }
 }

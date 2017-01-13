@@ -1,4 +1,8 @@
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Scanner;
 
 /**
  *
@@ -6,13 +10,16 @@ import java.io.*;
  */
 public class ActorsAge extends Command{
     public String resultName = "ActorsAge.csv";
-    String readFile(File file) throws IOException {
+
+    void readFile(File file,File resultFile) throws IOException {
         String result = "";
-        result += "Surname,Firstname,Date Of Birth,dateOfDeath" + "\n";
-        InputStream ips = new FileInputStream(file);
-        InputStreamReader ipsr = new InputStreamReader(ips);
-        BufferedReader br = new BufferedReader(ipsr);
+        result = "Surname,Firstname,DateOfBirth,DateOfDeath";
+        Scanner scanner = new Scanner(file,ENCODING.name());
         String line;
+        Path p = Paths.get(resultFile.getAbsolutePath());
+        BufferedWriter writer = Files.newBufferedWriter(p,ENCODING);
+        writer.write(result);
+        writer.newLine();
 
         String begin = "BY: Fab";
         String end = "\n{2}";
@@ -21,8 +28,9 @@ public class ActorsAge extends Command{
         String db = "";
         String dd = "";
         boolean foundBegin = false;
-        while((line = br.readLine()) != null)
+        while(scanner.hasNextLine())
         {
+            line = scanner.nextLine();
             if(line.contains(end))
             {
                 line = "";
@@ -39,7 +47,9 @@ public class ActorsAge extends Command{
                 {
                     if(nm != "" && db != "")
                     {
-                        result += nm +","+ db +", NULL" + "\n";
+                        result = nm +","+ db +", NULL";
+                        writer.write(result);
+                        writer.newLine();
                         nm = "";
                         db = "";
                         dd = "";
@@ -47,21 +57,20 @@ public class ActorsAge extends Command{
 
                     db = line.replaceAll("DB:","");
                     db = db.split(",",2)[0];
-                }
-
-                if (line.contains("NM:") && line.contains(","))
+                }else if (line.contains("NM:") && line.contains(","))
                 {
                     if(nm != "" && db != "")
                     {
-                        result += nm +","+ db +", NULL" + "\n";
+                        result = nm +","+ db +", NULL";
+                        writer.write(result);
+                        writer.newLine();
                         nm = "";
                         db = "";
                         dd = "";
                     }
 
                     nm = line.replaceAll("NM:", "");
-                }
-                if (line.contains("DD"))
+                } else if (line.contains("DD"))
                 {
                     dd = line.replaceAll(",.*$|DD:|(?:\\D(?=[^(]*\\))|\\))", "");
                 }
@@ -75,7 +84,9 @@ public class ActorsAge extends Command{
                 {
                     if(nm != "" && db != "" && dd != "")
                     {
-                        result += nm +","+ db + "," + dd + "\n";
+                        result += nm +","+ db + "," + dd;
+                        writer.write(result);
+                        writer.newLine();
                         nm = "";
                         db = "";
                         dd = "";
@@ -87,8 +98,7 @@ public class ActorsAge extends Command{
                 foundBegin = (line.equals(begin));
             }
         }
-        br.close();
-
-        return result;
+        scanner.close();
+        writer.close();
     }
 }
