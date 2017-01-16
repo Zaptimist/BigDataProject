@@ -42,6 +42,7 @@ public class Business extends Command {
             line = scanner.nextLine();
             if(hasFoundRegex)
             {
+                line = removeComma(line);
                 if(findSummary(line,endRegex))
                     break;
                 if(line.length() > 0)
@@ -55,7 +56,6 @@ public class Business extends Command {
                         }
                         else{
                             mv = line.replaceAll("MV: ", "") + ",";
-                            mv = removeComma(mv);
                         }
 
                     }
