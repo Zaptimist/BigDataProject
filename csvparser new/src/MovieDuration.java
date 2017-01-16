@@ -51,6 +51,7 @@ public class MovieDuration extends Command
                 {
                     //result += line.replaceAll("\t","") + "\n";
                     writer.write(line.replaceAll("\t",""));
+                    writer.newLine();
                 }
 
             }

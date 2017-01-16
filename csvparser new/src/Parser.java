@@ -58,7 +58,7 @@ public class Parser {
                     p.doCountries(p.filePath,p.outPut);
                     break;
                 case 5:
-                    p.doMovieDuration(p.outPut,p.outPut);
+                    p.doMovieDuration(p.filePath,p.outPut);
                     break;
                 case 6:
                     p.doRating(p.filePath,p.outPut);
