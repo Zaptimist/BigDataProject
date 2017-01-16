@@ -47,7 +47,7 @@ public class Business extends Command {
                     break;
                 if(line.length() > 0)
                 {
-                    line = line.replaceAll("\\s\\(",",(").replaceAll("\\)(.*)",")");
+                    //line = line.replaceAll("\\s\\(",",(").replaceAll("\\)(.*)",")");
 
                     if (line.startsWith("MV: ")) {
                         if (line.contains("\"")) {
@@ -55,7 +55,10 @@ public class Business extends Command {
                             serieCheck = true;
                         }
                         else{
-                            mv = line.replaceAll("MV: ", "") + ",";
+                            mv = insertComma(line);
+                            mv = removeBrackets(mv);
+                            mv = removeSpaceBeforeComma(mv);
+                            mv = mv.replaceAll("MV: ", "") + ",";
                         }
 
                     }
@@ -75,7 +78,7 @@ public class Business extends Command {
                         if (mv != ""&& bt != "")
                         {
                             //Removes the ( and ) and all non digits
-                            mv = mv.replaceAll("(?:\\D(?=[^(]*\\))|\\)\\s*)","");
+                            //mv = mv.replaceAll("(?:\\D(?=[^(]*\\))|\\)\\s*)","");
                             //Removes all the spaces in the price
                             bt = bt.replaceAll("[\\s{5}]*[,]$", "");
                             result = mv + bt;
