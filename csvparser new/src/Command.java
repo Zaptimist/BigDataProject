@@ -34,18 +34,27 @@ public abstract class Command {
     String insertComma(String line){
         String result = "";
         int index = line.indexOf("(");
-        if(index > -1){
-            StringBuffer sb = new StringBuffer(line);
-            result = sb.insert(index,",").toString();
+        while(index >= 0){
+            if(line.length() > index +1){
+                if(Character.isDigit(line.charAt(index+1))){
+                    StringBuffer sb = new StringBuffer(line);
+                    result = sb.insert(index,",").toString();
+                    break;
+                }
+            }
+            index = line.indexOf("(",index+1);
         }
         result = removeSpaceBeforeComma(result, index);
+        System.out.println(result);
         return result;
     }
 
     String removeSpaceBeforeComma(String line, int index){
         if(index > 0){
-            StringBuffer sb = new StringBuffer(line);
-            line = sb.deleteCharAt(index -1).toString();
+            if(line.charAt(index-1) == ' '){
+                StringBuffer sb = new StringBuffer(line);
+                line = sb.deleteCharAt(index -1).toString();
+            }
         }
         return line;
     }
@@ -53,8 +62,10 @@ public abstract class Command {
     String removeSpaceBeforeComma(String line){
         int index = line.indexOf(",");
         if(index > 0){
-            StringBuffer sb = new StringBuffer(line);
-            line = sb.deleteCharAt(index -1).toString();
+            if(line.charAt(index -1) == ' '){
+                StringBuffer sb = new StringBuffer(line);
+                line = sb.deleteCharAt(index -1).toString();
+            }
         }
         return line;
     }
