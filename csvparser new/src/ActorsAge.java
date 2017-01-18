@@ -84,7 +84,7 @@ public class ActorsAge extends Command{
                 {
                     if(nm != "" && db != "" && dd != "")
                     {
-                        result += nm +","+ db + "," + dd;
+                        result = nm +","+ db + "," + dd;
                         writer.write(result);
                         writer.newLine();
                         nm = "";

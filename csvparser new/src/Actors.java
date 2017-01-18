@@ -70,6 +70,8 @@ public class Actors extends Command {
                     }
                     if(hasFoundRegex && line != ""){
                         line = removeJunk(line);
+                        if(endsWithComma(line))
+                            line += "NULL";
                         writer.write(line);
                         writer.newLine();
                     }

@@ -55,6 +55,7 @@ public class MovieRating extends Command{
                 {
                     line = line.trim();
                     line = removeComma(line);
+                    line = line.replaceAll("( .\\))|(:\\))|(;\\))|( ;-\\))|( :-\\))|(;-\\))|(:-\\))","");
                     line = replaceTwoSpaceWithComma(line);
                     line = insertComma(line);
                     line = removeBrackets(line);
