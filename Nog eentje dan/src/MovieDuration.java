@@ -39,13 +39,15 @@ public class MovieDuration extends Command
                 }
                 else
                 {
+                    line = line.replaceAll("\\(\\d{4}\\s\\-\\s\\d{4}\\)", "");
+                    line = line.replaceAll("\\(\\d{4}\\-\\d{2}", "");
                     line = removeComma(line);
                     line = removeSpaceAfterBracket(line);
                     line = line.replaceAll("\\[.*?\\]","");
                     line = insertComma(line);
                     line = removeBrackets(line);
                     line = line.replaceFirst("\t",",");
-                    line = line.replaceAll("((?s)(\t).*?(:))","");
+                    line = line.replaceAll(",,", ",NULL,");
                 }
                 if(line != "")
                 {

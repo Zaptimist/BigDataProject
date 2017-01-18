@@ -41,6 +41,11 @@ public abstract class Command {
                     result = sb.insert(index,",").toString();
                     break;
                 }
+                else if(line.charAt(index+1) == '?' && line.charAt(index+2) == '?' && line.charAt(index+3) == '?'  && line.charAt(index+4) == '?'){
+                    StringBuffer sb = new StringBuffer(line);
+                    result = sb.insert(index,",").toString();
+                    break;
+                }
             }
             index = line.indexOf("(",index+1);
         }
@@ -146,6 +151,4 @@ public abstract class Command {
     String removeDay(String line){
         return line.replaceAll("\\([0-9]{2}\\/[0-9]{1}\\)","");
     }
-   
-
 }

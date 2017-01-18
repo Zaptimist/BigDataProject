@@ -31,11 +31,19 @@ public class Countries extends Command{
                     break;
                 if(line.length() > 0){
                     if(!startsWithQuote(line)){
-                        line = removeComma(line);
-                        line = removeSpaceAfterBracket(line);
-                        line = insertComma(line);
-                        line = removeBrackets(line);
+                        line = line.replaceAll("\\(\\d{4}\\s\\-\\s\\d{4}\\)", "");
+                        line = line.replaceAll("\\(\\d{4}\\-\\d{2}", "");
+                        line = line.replaceAll("\"", "");
+                        line = removeComma(line);// goed
+
+                        line = removeSpaceAfterBracket(line);//goed
+                        line = insertComma(line); // PROBLEMEN
+                        line = line.replaceAll("\\((\\?{4})\\)", "NULL"); // goed
                         line = replaceTabsWithComma(line);
+
+                        line = removeBrackets(line);                        
+                        line = removeCurly(line);
+                        line = line.replaceAll(",,", ",NULL,");
                         writer.write(line);
                         writer.newLine();
                     }
