@@ -30,18 +30,13 @@ public abstract class Command {
         return line.contains(",");
     }
 
-    boolean endsWithComma(String line){
-        return line.endsWith(",");
-    }
-
     //methode om een comma op de index van het eerst gevonden haakje in een string te plaatsen
     String insertComma(String line){
         String result = "";
         int index = line.indexOf("(");
         while(index >= 0){
             if(line.length() > index +1){
-
-                if(Character.isDigit(line.charAt(index+1)) && Character.isDigit(line.charAt(index+2)) && Character.isDigit(line.charAt(index+3))&& Character.isDigit(line.charAt(index+4))){
+                if(Character.isDigit(line.charAt(index+1)) && Character.isDigit(line.charAt(index+2)) && Character.isDigit(line.charAt(index+3)) && Character.isDigit(line.charAt(index+4))){
                     StringBuffer sb = new StringBuffer(line);
                     result = sb.insert(index,",").toString();
                     break;
@@ -50,9 +45,6 @@ public abstract class Command {
             index = line.indexOf("(",index+1);
         }
         result = removeSpaceBeforeComma(result, index);
-
-        System.out.println(result);
-        System.out.println(result);
         return result;
     }
 
@@ -131,10 +123,29 @@ public abstract class Command {
         return line.replaceAll("(?:\\D(?=[^(]*\\))|\\))","");
     }
 
-
     String replaceTabsWithComma(String line){
         String result = line.replaceFirst("\t",",");
         return result.replaceAll("\t","");
     }
+    
+    String removeJunk(String line){
+        return line.replaceAll("((?s)(<|\\[).*?(>|\\]))","");
+    }
+    
+    //Haalt {{ en }} weg
+    String removeCurly(String line){
+        return line.replaceAll("\\{.*?\\}\\}","");
+    }
+    
+    //Haalt (4getallen - 4getallen) weg
+    String removeBeginEndYear(String line){
+        return line.replaceAll("(?:\\D(?=[^(]*\\)))","").replaceAll("[0-9]{8}", "");
+    }
+    
+    //(24/7)
+    String removeDay(String line){
+        return line.replaceAll("\\([0-9]{2}\\/[0-9]{1}\\)","");
+    }
+   
 
 }
