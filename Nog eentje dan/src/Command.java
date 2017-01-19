@@ -29,19 +29,32 @@ public abstract class Command {
     boolean containsComma(String line){
         return line.contains(",");
     }
+    
+    boolean endsWithComma(String line){
+        return line.endsWith(",");
+    }
+    
+    // removes if the line starts with )
+    String removeWrongBracket(String line){
+        int i1 = line.indexOf(")");
+        int i2 = line.indexOf("(");
+        if(i1 < i2){
+            return line.replace(")","");
+        }
+        return line;
+    }
 
     //methode om een comma op de index van het eerst gevonden haakje in een string te plaatsen
-    String insertComma(String line){
+        String insertComma(String line){
         String result = "";
         int index = line.indexOf("(");
         while(index >= 0){
             if(line.length() > index +1){
-                if(Character.isDigit(line.charAt(index+1)) && Character.isDigit(line.charAt(index+2)) && Character.isDigit(line.charAt(index+3)) && Character.isDigit(line.charAt(index+4))){
+                if(Character.isDigit(line.charAt(index+1)) && Character.isDigit(line.charAt(index+2)) && Character.isDigit(line.charAt(index+3))&& Character.isDigit(line.charAt(index+4))){
                     StringBuffer sb = new StringBuffer(line);
                     result = sb.insert(index,",").toString();
                     break;
-                }
-                else if(line.charAt(index+1) == '?' && line.charAt(index+2) == '?' && line.charAt(index+3) == '?'  && line.charAt(index+4) == '?'){
+                }else if(line.charAt(index+1) == '?' && line.charAt(index+2) == '?' && line.charAt(index+3) == '?'  && line.charAt(index+4) == '?'){
                     StringBuffer sb = new StringBuffer(line);
                     result = sb.insert(index,",").toString();
                     break;
@@ -50,6 +63,7 @@ public abstract class Command {
             index = line.indexOf("(",index+1);
         }
         result = removeSpaceBeforeComma(result, index);
+
         return result;
     }
 
@@ -151,4 +165,16 @@ public abstract class Command {
     String removeDay(String line){
         return line.replaceAll("\\([0-9]{2}\\/[0-9]{1}\\)","");
     }
+   
+    //Select the - in ( - ) Brace   (?:\D*-(?=[^(]*\)))
+    String removeDashInBrace(String line){
+        return line.replaceAll("(?:\\D*-(?=[^(]*\\)))","");
+    }
+    
+    //Remove between ) ( 
+    //Select the - in ( - ) Brace   (?:\D*-(?=[^(]*\)))
+    String removeBetweenCurlyClosed(String line){
+        return line.replaceAll("(?<=\\))(.*?)(?=\\()","");
+    }
+
 }

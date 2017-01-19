@@ -42,12 +42,13 @@ public class ActorsAge extends Command{
                 line = line.replaceAll("-{79}:", "");
                 line = line.replaceAll("(?m)^(?!(NM|DB|DD):).*", "");
                 line = line.replaceFirst("\\s", "");
+                line = line.replaceAll(",\\s", ",");
 
                 if (line.contains("DB:"))
                 {
                     if(nm != "" && db != "")
                     {
-                        result = nm +","+ db +", NULL";
+                        result = nm +","+ db +",NULL";
                         writer.write(result);
                         writer.newLine();
                         nm = "";
@@ -61,7 +62,7 @@ public class ActorsAge extends Command{
                 {
                     if(nm != "" && db != "")
                     {
-                        result = nm +","+ db +", NULL";
+                        result = nm +","+ db +",NULL";
                         writer.write(result);
                         writer.newLine();
                         nm = "";
@@ -84,7 +85,7 @@ public class ActorsAge extends Command{
                 {
                     if(nm != "" && db != "" && dd != "")
                     {
-                        result += nm +","+ db + "," + dd;
+                        result = nm +","+ db + "," + dd;
                         writer.write(result);
                         writer.newLine();
                         nm = "";

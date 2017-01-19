@@ -1,0 +1,72 @@
+-- INSERT SPECIFIC DATA FROM STAGINGDATABASES INTO STRUCTURED DATABASE TABLE MOVIE
+-- Insert column title and published_in_year from stagingdb.Actor into structdb.Movie
+INSERT INTO structdb.movie(title,published_in_year)
+SELECT title, published_in_year FROM stagingdb.actor
+
+-- Insert column title and published_in_year from stagingdb.Actress into structdb.Movie
+INSERT INTO structdb.movie(title,published_in_year)
+SELECT title, published_in_year FROM stagingdb.actress
+
+-- Insert column votes from stagingdb.movie_rating into column vote from structdb.movie where the movie title's are the same
+UPDATE structdb.movie
+SET vote = MR.votes FROM stagingdb.movie_rating MR 
+WHERE structdb.movie.title = MR.title
+
+-- Insert column grade from stagingdb.movie_rating into column grade from structdb.movie where the movie title's are the same
+UPDATE structdb.movie
+SET grade = MR.grade FROM stagingdb.movie_rating MR 
+WHERE structdb.movie.title = MR.title
+
+-- Insert column currency from stagingdb.business into column currency from structdb.movie where the movie title's are the same & movie_published_in_year are the same
+UPDATE structdb.movie
+SET currency = BS.currency FROM stagingdb.business BS 
+WHERE structdb.movie.title = BS.title AND structdb.movie.published_in_year = BS.published_in_year
+
+-- Insert column produced_in_country from stagingdb.country into column produced_in_country from structdb.movie where the movie title's are the same & movie_published_in_year are the same
+UPDATE structdb.movie
+SET produced_in_country = CT.produced_in_country FROM stagingdb.country CT 
+WHERE structdb.movie.title = CT.title AND structdb.movie.published_in_year = CT.published_in_year
+
+
+-- INSERT SPECIFIC DATA FROM STAGINGDATABASES INTO STRUCTURED DATABASE TABLE CAST
+-- Insert column surname and firstname from stagingdb.Actor into structdb.cast
+INSERT INTO structdb.cast(surname,firstname)
+SELECT surname, firstname FROM stagingdb.actor
+
+-- fill column structdb.gender with string  "male" for actors
+UPDATE structdb.cast SET gender = 'male'
+
+-- Insert column surname and firstname from stagingdb.Actress into structdb.cast
+INSERT INTO structdb.cast(surname,firstname)
+SELECT surname, firstname FROM stagingdb.actress
+
+-- fill column structdb.gender with string  "female" for actresses where gender is not filled yet
+UPDATE structdb.cast SET gender = 'female' WHERE gender IS NULL
+
+-- Insert column date_of_birth from stagingdb.actors_age into column date_of_birth from structdb.cast where the surname's are the same & firstnames are the same
+UPDATE structdb.cast 
+SET date_of_birth = AA.date_of_birth FROM stagingdb.actor_age AA 
+WHERE structdb.cast.surname = AA.surname AND structdb.cast.firstname = AA.firstname
+
+-- Insert column date_of_death from stagingdb.actors_age into column date_of_death from structdb.cast where the surname's are the same & firstnames are the same
+UPDATE structdb.cast 
+SET date_of_death = DD.date_of_death FROM stagingdb.actor_age DD 
+WHERE structdb.cast.surname = DD.surname AND structdb.cast.firstname = DD.firstname
+
+
+-- INSERT SPECIFIC DATA FROM STAGINGDATABASES INTO STRUCTURED DATABASE TABLE MOVIE_DURATION
+-- INSERT 2 COLUMN FROM structdb.movie to eventually add duration on right index
+INSERT INTO structdb.movie_duration(title,published_in_year)
+SELECT title, published_in_year FROM structdb.movie
+
+-- insert duration from stagingdb.movie_duration into column duration from structd.movie_duration
+UPDATE structdb.movie_duration 
+SET duration = MD.duration FROM stagingdb.movie_duration MD 
+WHERE structdb.movie_duration.title = MD.title AND structdb.movie_duration.published_in_year = MD.published_in_year
+
+-- Drop the tables title and published_in_year bc unnecesarry 
+ALTER TABLE structdb.movie_duration
+DROP title
+
+ALTER TABLE structdb.movie_duration
+DROP published_in_year

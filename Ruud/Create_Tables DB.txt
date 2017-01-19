@@ -1,0 +1,100 @@
+-- CREATE STATING TABLES
+-- Actor table
+CREATE TABLE stagingdb.actor (
+    surname VARCHAR,
+    firstname VARCHAR,
+    title VARCHAR,
+    published_in_year VARCHAR
+)
+
+-- Actress table
+CREATE TABLE stagingdb.actress(
+    surname VARCHAR,
+    firstname VARCHAR,
+    title VARCHAR,
+    published_in_year VARCHAR
+)
+
+-- Actor Age table
+CREATE TABLE stagingdb.actor_age (
+    surname VARCHAR,
+    name VARCHAR,
+    date_of_birth VARCHAR,
+    date_of_death VARCHAR
+);
+
+-- Business table
+CREATE TABLE stagingdb.business(
+	title VARCHAR,
+    published_in_year VARCHAR,
+    currency VARCHAR,
+    revenue NUMERIC
+)
+
+-- Country table
+CREATE TABLE stagingdb.country(
+    title VARCHAR,
+    published_in_year VARCHAR,
+    produced_in_country VARCHAR
+);
+
+-- Movie Duration table
+CREATE TABLE stagingdb.movie_duration(
+    title VARCHAR,
+    published_in_year VARCHAR,
+    duration VARCHAR 
+);
+
+-- Movie Rating table
+CREATE TABLE stagingdb.movie_rating(
+    votes VARCHAR,
+    grade NUMERIC,
+    title VARCHAR,
+    published_year VARCHAR
+);
+
+
+-- INSERT DATA FROM .CSV INTO STAGINGTABLES.
+-- Copy data <table_name> (change path for different .csv file)
+COPY stagingdb.movie_rating FROM 'C:\Users\Ruud\Desktop\BEWAREN\new\MovieRating.csv' DELIMITER ',' CSV HEADER encoding 'latin1';
+
+-- DELETE EVERYTHING FROM A SPECIFIC TABLE.
+delete from stagingdb.Actor
+
+-- CREATE STRUCTURED TABLES
+-- Movie Table (merged table from Actor, Actress, Rating, Business & Country)
+CREATE TABLE structdb.movie(
+	movie_id SERIAL NOT  NULL,
+    title VARCHAR,
+    published_year VARCHAR,
+    votes VARCHAR,
+    grade NUMERIC,
+    currency VARCHAR,
+    produced_in_country varchar,
+    Primary KEY(movie_id)
+)
+
+-- Cast table (merged table Actress & Actor)
+CREATE TABLE structdb.cast(
+	cast_id SERIAL NOT NULL,
+    surname VARCHAR,
+    name VARCHAR,
+    gender VARCHAR,
+    date_of_birth VARCHAR,
+    date_of_death VARCHAR,
+    Primary KEY(cast_id)
+);
+
+-- Movie Duration table
+CREATE TABLE structdb.movie_duration(
+	movie_duration_id SERIAL NOT NULL,
+    duration VARCHAR,
+    Primary KEY(movie_duration_id)  
+);
+
+-- Association table
+CREATE TABLE structdb.movie_cast(
+	cast_id INT REFERENCES structdb.cast(cast_id),
+    movie_id INT REFERENCES structdb.movie(movie_id),
+    Primary KEY(movie_id,cast_id)
+);

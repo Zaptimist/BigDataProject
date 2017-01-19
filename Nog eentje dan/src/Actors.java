@@ -3,7 +3,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Scanner;
-
+ 
 /**
  * Created by Frank on 10-1-2017.
  */
@@ -11,7 +11,7 @@ public class Actors extends Command {
     public String regex = "----\t\t\t------";
     public String endRegex = "-----------------------------------------------------------------------------";
     public String resultName = "Actors.csv";
-
+ 
     void readFile(File file,File resultFile) throws IOException {
         String result = "";
         result = "Surname,Name,Movie,Year";
@@ -38,9 +38,13 @@ public class Actors extends Command {
                             if(containsComma(line)){
                                 line = line.replaceAll(",","");
                             }
-
+                            line = line.replaceAll("\\(\\);", "]");
                             line = replaceTabsWithComma(line);
+                            line = removeWrongBracket(line);
+                            line = line.replaceAll("\\<3","");
+                            line = line.replaceAll("( .\\))|(:\\))|(;\\))|( ;-\\))|( :-\\))|(;-\\))|(:-\\))","");
                             line = insertComma(line);
+                            line = line.replaceAll("< ","");
                             line = removeBrackets(line);
                             line = actorName + line;
                         }
@@ -49,6 +53,13 @@ public class Actors extends Command {
                         if(lines.length > 0){
                             actorName = lines[0];
                             actorName = removeSpaceAfterComma(actorName);
+                            actorName = actorName.replaceFirst("\\.,", "");
+                            actorName = actorName.replaceAll("\"", "");
+                            if (actorName.trim().endsWith(",")) {
+                                actorName = actorName.substring(0, actorName.lastIndexOf(","));
+                               
+                            }
+                           
                         }
                         if(!containsComma(actorName))
                             actorName += ",";
@@ -56,6 +67,7 @@ public class Actors extends Command {
                         if(containsQuote(line))
                             line = "";
                         else{
+                            line = line.replaceAll("\\(\\);", "]");
                             if(containsComma(line)){
                                 line = line.replaceAll(",","");
                             }
@@ -63,13 +75,22 @@ public class Actors extends Command {
                                 line = "," + line;
                             }
                             line = replaceTabsWithComma(line);
+                            line = removeWrongBracket(line);
+                            line = line.replaceAll("\\<3","");
+                            line = line.replaceAll("< ", "");
+                            line = line.replaceAll("( .\\))|(:\\))|(;\\))|( ;-\\))|( :-\\))|(;-\\))|(:-\\))","");
                             line = insertComma(line);
                             line = removeBrackets(line);
                             line = actorName + line;
                         }
                     }
                     if(hasFoundRegex && line != ""){
+                        line = line.replaceAll("< ", "");
                         line = removeJunk(line);
+                        line = line.trim();
+                        if (endsWithComma(line)) {
+                            line += "NULL";
+                        }
                         writer.write(line);
                         writer.newLine();
                     }
@@ -82,9 +103,9 @@ public class Actors extends Command {
         scanner.close();
         writer.close();
     }
-
+ 
     String removeJunk(String line){
         return line.replaceAll("((?s)(<|\\[).*?(>|\\]))","");
     }
-
+ 
 }
